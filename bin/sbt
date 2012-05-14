@@ -1,0 +1,4 @@
+#!/bin/bash
+
+java -Dfile.encoding=UTF8 -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xdebug -Xrunjdwp:transport=dt_socket,address=8001,server=y,suspend=n -jar /Users/alin/apps/sbt/sbt-launch.jar "$@"
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BREAK_CHARS="(){}[],^%$#@\"\";:''|\\"
+CLOJURE_DIR=~/apps/clojure
+CLOJURE_JAR="${CLOJURE_DIR}/clojure.jar"
+CLOJURE_CONTRIB=~/apps/clojure-contrib/clojure-contrib.jar
+PRAGMATIC_CODE=${CLOJURE_DIR}/code
+#CUSTOM_CLJ_JAR=`find /Users/alin/.m2/repository/org/clojure -name "*.jar" | xargs | sed 's/ /:/g'`
+#CUSTOM_CLJ_JAR=`recursive_classpath /Users/alin/.m2/repository/org/clojure`
+CLJ_CLASSPATH="${CLOJURE_JAR}:${CLOJURE_CONTRIB}:${PRAGMATIC_CODE}:./src:./classes:${CUSTOM_CLJ_JAR}"
+
+if [ -z "$1" ]; then
+	rlwrap --remember -q "" -c -b $BREAK_CHARS -f $HOME/.clj_completions java -cp \
+	"${CLJ_CLASSPATH}" clojure.main
+else
+	java -cp "${CLJ_CLASSPATH}" clojure.main $1
+fi
+
