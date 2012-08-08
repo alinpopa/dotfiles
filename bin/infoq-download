@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+baseUrl="rtmpe://video.infoq.com/cfx/st/"
+
+path=`curl $1                                                         |
+      grep -Eo "jsclassref='[^']+"                                    |
+      sed "s/jsclassref='//"                                          |
+      php -r "echo base64_decode(file_get_contents('php://stdin'));"`
+
+name=`echo $path | grep -Eo "[a-zA-Z0-9-]+.mp4"`
+
+rtmpdump -r "$baseUrl$path" -o "$HOME/Desktop/infoq-$name"
