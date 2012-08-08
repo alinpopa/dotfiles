@@ -71,6 +71,8 @@ export MANPATH=/usr/local/share/man:"${MANPATH}"
 #export PS1='[\[\e[0;32m\]\W\[\e[m\]]$ '
 #export PS1='[\[\e[0;32m\]\W\[\e[m\]\e[0;33;49m\]$(parse_git_branch)\[\e[0;0m]$ '
 #export PS1="[\W]$ "
+#export PS1='\W % '
+#export PS1='[\[\033[0;32m\]\u\[\033[00m\]@\[\033[0;33m\]\h\[\033[00m\] \W\[\033[0;36m\]$(__git_ps1 " (%s)")\[\033[00m\]] $ '
 
 export M2_REPO="/Users/alin/.m2/repository"
 export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
@@ -79,6 +81,7 @@ export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-lo
 
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
+alias grep='grep --color=auto'
 #alias vim='vim'
 alias mysql_start='sudo MySQLCOM start'
 alias mysql_stop='sudo MySQLCOM stop'
@@ -87,3 +90,5 @@ alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :Doc
 
 #~/bin/whats_the_japanese_word
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
