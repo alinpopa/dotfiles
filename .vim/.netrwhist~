@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Volumes/mystuff/workspaces/workspace_test/ft-video-service'
-let g:netrw_dirhist_2='/Users/alin/usr/local/homebrew'
-let g:netrw_dirhist_3='/Users/alin/workspaces/workspace_sbx/sbx-search-consumer'
