@@ -2,11 +2,17 @@
 
 DOTFILES=~/dotfiles
 
-ln -s ${DOTFILES}/.bash_profile ~/.bash_profile
-ln -s ${DOTFILES}/.bashrc ~/.bashrc
-ln -s /.gemrc ~/.gemrc
-ln -s ${DOTFILES}/.vim ~/.vim
-ln -s ${DOTFILES}/.vimrc ~/.vimrc
-ln -s ${DOTFILES}/.zshrc ~/.zshrc
-ln -s ${DOTFILES}/bin ~/bin
+FILES=".bash_profile .bashrc .gemrc .vim .vimrc .zshrc bin"
+
+# Remove symlinks
+for file in $FILES
+do
+  rm ~/${file}
+done
+
+# Symlink files
+for file in $FILES
+do
+  ln -s ${DOTFILES}/${file} ~
+done
 
