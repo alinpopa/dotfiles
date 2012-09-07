@@ -60,6 +60,7 @@ export PATH=/usr/local/mysql/bin:"${PATH}"
 export PATH=~/apps/play:"${PATH}"
 export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 #export PATH="${CUSTOM_ERL}/bin":"${PATH}"
+export PATH=/usr/local/share/python:${PATH}
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
