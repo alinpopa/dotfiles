@@ -28,6 +28,10 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+export CVS_RSH=/usr/bin/ssh
+export GIT_SSH=/usr/bin/ssh
+export SVN_SSH=/usr/bin/ssh
+
 if [[ -r /usr/local/share/python/virtualenvwrapper.sh ]]; then
   source /usr/local/share/python/virtualenvwrapper.sh
 else
