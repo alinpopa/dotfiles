@@ -10,8 +10,8 @@ export JRUBY_HOME=~/apps/jruby
 ###
 
 # java stuff
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
-export JAVA5_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home
+#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+#export JAVA5_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home
 ###
 
 # Apache Ant
@@ -38,6 +38,7 @@ export JYTHON_HOME=/Users/alin/apps/jython
 export PROTOBUF_HOME="${HOME}/apps/protobuf"
 export CUSTOM_ERL="${HOME}/apps/erlang-custom/erlang"
 export RIAK_BIN_DIR="/Users/alin/apps/riak/bin"
+export SBT_HOME="/Users/alin/apps/sbt"
 
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
@@ -61,6 +62,7 @@ export PATH=~/apps/play:"${PATH}"
 export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 #export PATH="${CUSTOM_ERL}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
+export PATH=${SBT_HOME}/bin:${PATH}
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"

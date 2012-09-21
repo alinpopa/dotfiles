@@ -91,6 +91,7 @@ if has("gui_running")
 endif
 
 au FileType erlang set sw=4 | set ts=4
+au FileType python set sw=4 | set ts=4
 au FileType ruby set sw=2 | set ts=2
 au FileType scala set sw=2 | set ts=2
 au FileType java set sw=4 | set ts=4
