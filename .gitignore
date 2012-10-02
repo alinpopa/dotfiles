@@ -1,6 +1,4 @@
 .vim/doc/tags
 *.swp
-.vim/doc/command-t.txt
-.vim/plugin/command-t.vim
 .vim/ruby/
 
