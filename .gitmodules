@@ -12,4 +12,5 @@
 	url = git://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/vimclojure"]
 	path = .vim/bundle/vimclojure
-	url = git://github.com/vim-scripts/VimClojure.git
+  url = git://github.com/vim-scripts/VimClojure.git
+  ignore = dirty
