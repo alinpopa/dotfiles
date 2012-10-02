@@ -3,7 +3,8 @@
 git_bundles = [
   "git://github.com/jimenezrick/vimerl.git",
   "git://github.com/kien/ctrlp.vim.git",
-  "git://github.com/derekwyatt/vim-scala.git"
+  "git://github.com/derekwyatt/vim-scala.git",
+  "git://github.com/scrooloose/nerdtree.git"
 ]
 
 require 'fileutils'
