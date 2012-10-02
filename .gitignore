@@ -1,5 +1,4 @@
 .vim/doc/tags
-.vim/bundle
 *.swp
 .vim/doc/command-t.txt
 .vim/plugin/command-t.vim
