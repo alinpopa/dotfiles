@@ -64,9 +64,8 @@ nmap <F6> <Esc>:!ruby %<CR>
 " clojure functionality
 nmap clj <Esc>:!clj %<CR>
 
-let clj_highlight_builtins = 1
-let clj_highlight_contrib = 1
-let clj_paren_rainbow = 1
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
 
 "let clj_want_gorilla = 1
 
