@@ -19,6 +19,10 @@ function tab_title () {
   fi
 }
 
+function pip_upgrade_all () {
+  pip freeze --local | cut -d = -f 1  | xargs pip install -U
+}
+
 precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
