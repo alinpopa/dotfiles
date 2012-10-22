@@ -36,9 +36,3 @@ export CVS_RSH=/usr/bin/ssh
 export GIT_SSH=/usr/bin/ssh
 export SVN_SSH=/usr/bin/ssh
 
-if [[ -r /usr/local/share/python/virtualenvwrapper.sh ]]; then
-  source /usr/local/share/python/virtualenvwrapper.sh
-else
-  echo "WARNING: Can't find virtualenvwrapper.sh"
-fi
-
