@@ -1,3 +1,4 @@
-KERL_CONFIGURE_OPTIONS="--disable-hipe --enable-smp-support --enable-threads
+KERL_CONFIGURE_OPTIONS="--enable-hipe --enable-smp-support --enable-threads
                         --enable-kernel-poll  --enable-darwin-64bit"
+KERL_DISABLE_AGNER="true"
 

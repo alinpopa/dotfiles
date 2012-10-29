@@ -2,7 +2,14 @@
 
 DOTFILES=~/dotfiles
 
-FILES=".bash_profile .bashrc .gemrc .vim .vimrc .zshrc bin"
+FILES=".bash_profile \
+  .bashrc \
+  .gemrc \
+  .vim \
+  .vimrc \
+  .zshrc \
+  .kerlrc \
+  bin"
 
 # Remove symlinks
 for file in $FILES
