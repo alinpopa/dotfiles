@@ -26,6 +26,20 @@ export PROTOBUF_HOME="${HOME}/apps/protobuf"
 export RIAK_BIN_DIR="/Users/alin/apps/riak/bin"
 export SBT_HOME="/Users/alin/apps/sbt"
 
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+export CVS_RSH=/usr/bin/ssh
+export GIT_SSH=/usr/bin/ssh
+export SVN_SSH=/usr/bin/ssh
+
+export M2_REPO="/Users/alin/.m2/repository"
+export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
+export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/httpcore/4.0.1/*"
+export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
+
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
 export PATH="${PATH}":"${HOME_BIN}"
@@ -47,10 +61,7 @@ export PATH=${SBT_HOME}/bin:${PATH}
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
 
-export M2_REPO="/Users/alin/.m2/repository"
-export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
-export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/httpcore/4.0.1/*"
-export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
+export PS1="\W % "
 
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
