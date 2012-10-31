@@ -64,7 +64,7 @@ export MANPATH=/usr/local/share/man:"${MANPATH}"
 
 export PS1="\W % "
 
-alias ls='ls -Fl -G'
+alias ls='ls -Fl -G --color'
 alias vi='vi -c NERDTreeToggle'
 alias grep='grep --color=auto'
 alias mysql_start='sudo MySQLCOM start'
