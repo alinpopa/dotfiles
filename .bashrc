@@ -57,6 +57,7 @@ export PATH=~/apps/play:"${PATH}"
 export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
 export PATH=${SBT_HOME}/bin:${PATH}
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
