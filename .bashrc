@@ -42,7 +42,6 @@ export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-lo
 
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
-export PATH="${PATH}":"${HOME_BIN}"
 export PATH=~/apps/maven/bin:"${PATH}"
 export PATH=~/apps/xmlbeans/bin:"${PATH}"
 export PATH=~/apps/scala/bin:"${PATH}"
@@ -58,6 +57,7 @@ export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
 export PATH=${SBT_HOME}/bin:${PATH}
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
+export PATH=${HOME_BIN}:${PATH}
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
@@ -72,7 +72,7 @@ alias mysql_stop='sudo MySQLCOM stop'
 alias mvim='mvim -c NERDTreeToggle'
 alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 alias tinyscheme="rlwrap scheme"
-alias readlink="greadlink"
+#alias readlink="greadlink"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
