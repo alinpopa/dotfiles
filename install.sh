@@ -8,6 +8,7 @@ FILES=".bash_profile \
   .vim \
   .vimrc \
   .zshrc \
+  .zprofile \
   .kerlrc \
   bin"
 
