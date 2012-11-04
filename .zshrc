@@ -3,9 +3,9 @@ autoload -U colors && colors
 PROMPT="%{$fg[green]%}%c %{$reset_color%}%% "
 
 # History stuff
-HISTSIZE=1000
+HISTSIZE=500
 HISTFILE=~/.history
-SAVEHIST=1000
+SAVEHIST=500
 #setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 
