@@ -1,4 +1,5 @@
-autoload -U colors && colors
+autoload -U colors compinit && colors
+compinit
 
 PROMPT="%{$fg[green]%}%c %{$reset_color%}%% "
 
