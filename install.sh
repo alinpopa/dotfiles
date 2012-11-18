@@ -10,7 +10,8 @@ FILES=".bash_profile \
   .zshrc \
   .zprofile \
   .kerlrc \
-  bin"
+  bin \
+  zsh_completions"
 
 # Remove symlinks
 for file in $FILES
