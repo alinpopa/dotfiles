@@ -77,6 +77,7 @@ export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/httpcore/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
 
+export PATH=/usr/local/bin:"${PATH}"
 export PATH=${HOME_BIN}:${PATH}
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
@@ -86,7 +87,6 @@ export PATH=~/apps/scala/bin:"${PATH}"
 export PATH="${GOBIN}":"${PATH}"
 export PATH="${SCALA_HOME}":"${PATH}"
 export PATH="${NODE_HOME}/bin":"${PATH}"
-export PATH=/usr/local/bin:"${PATH}"
 export PATH=/usr/local/sbin:"${PATH}"
 export PATH=~/.cabal/bin:"${PATH}"
 export PATH=/usr/local/mysql/bin:"${PATH}"
