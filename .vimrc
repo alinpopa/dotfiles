@@ -41,21 +41,33 @@ set hlsearch
 " tab functionality
 "set showtabline=2
 
-nmap ,t <Esc>:tabnew<CR>
-nmap ,n <Esc>:tabnext<CR>
-nmap ,p <Esc>:tabprevious<CR>
-nmap ,q <Esc>:tabclose<CR>
-nmap ,1 <Esc>:tabnext 1<CR>
-nmap ,2 <Esc>:tabnext 2<CR>
-nmap ,3 <Esc>:tabnext 3<CR>
-nmap ,4 <Esc>:tabnext 4<CR>
-nmap ,5 <Esc>:tabnext 5<CR>
-nmap ,6 <Esc>:tabnext 6<CR>
-nmap ,7 <Esc>:tabnext 7<CR>
-nmap ,8 <Esc>:tabnext 8<CR>
-nmap ,9 <Esc>:tabnext 9<CR>
+" leader settings
+let mapleader = ","
+let g:mapleader = ","
+
+
+nmap <leader>t <Esc>:tabnew<CR>
+nmap <leader>n <Esc>:tabnext<CR>
+nmap <leader>p <Esc>:tabprevious<CR>
+nmap <leader>q <Esc>:tabclose<CR>
+nmap <leader>1 <Esc>:tabnext 1<CR>
+nmap <leader>2 <Esc>:tabnext 2<CR>
+nmap <leader>3 <Esc>:tabnext 3<CR>
+nmap <leader>4 <Esc>:tabnext 4<CR>
+nmap <leader>5 <Esc>:tabnext 5<CR>
+nmap <leader>6 <Esc>:tabnext 6<CR>
+nmap <leader>7 <Esc>:tabnext 7<CR>
+nmap <leader>8 <Esc>:tabnext 8<CR>
+nmap <leader>9 <Esc>:tabnext 9<CR>
 ":nmap <C-t> <Esc>:tabnew<CR>
 ":nmap <C-n> <Esc>:tabnext<CR>
+
+nmap <leader>w <Esc>:w!<cr>
+nmap <C-s> <Esc>:w!<cr>
+imap <C-s> <Esc>:w!<cr>
+nmap <leader>Q <Esc>:qa<cr>
+nmap <leader>q <Esc>:q<cr>
+nmap <c-q> <Esc>:q<cr>
 
 " ruby functionality
 nmap <F5> <Esc>:!ruby -c %<CR>
