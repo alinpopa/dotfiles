@@ -62,12 +62,12 @@ nmap <leader>9 <Esc>:tabnext 9<CR>
 ":nmap <C-t> <Esc>:tabnew<CR>
 ":nmap <C-n> <Esc>:tabnext<CR>
 
-nmap <leader>w <Esc>:w!<cr>
-nmap <C-s> <Esc>:w!<cr>
-imap <C-s> <Esc>:w!<cr>
-nmap <leader>Q <Esc>:qa<cr>
-nmap <leader>q <Esc>:q<cr>
-nmap <c-q> <Esc>:q<cr>
+nmap <leader>w <Esc>:w!<CR>
+nmap <C-s> <Esc>:w!<CR>
+imap <C-s> <Esc>:w!<CR>
+nmap <leader>Q <Esc>:qa<CR>
+nmap <leader>q <Esc>:q<CR>
+nmap <C-q> <Esc>:q<CR>
 
 " ruby functionality
 nmap <F5> <Esc>:!ruby -c %<CR>
