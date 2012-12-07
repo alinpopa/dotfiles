@@ -42,8 +42,8 @@ set hlsearch
 "set showtabline=2
 
 " leader settings
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\\"
+let g:mapleader = "\\"
 
 
 nmap <leader>t <Esc>:tabnew<CR>
