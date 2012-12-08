@@ -70,7 +70,10 @@ nmap <leader>q <Esc>:q<CR>
 nmap <C-q> <Esc>:q<CR>
 
 " json reformat (brew install yajl)
-nmap <leader>jf <Esc>:%!json_reformat<CR>
+nmap <leader>fj <Esc>:%!json_reformat<CR>
+
+" xml reformat (brew install xmllint)
+nmap <leader>fx <Esc>:%!xmllint --format -<CR>
 
 " ruby functionality
 nmap <F5> <Esc>:!ruby -c %<CR>
