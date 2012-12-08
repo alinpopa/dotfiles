@@ -42,8 +42,8 @@ set hlsearch
 "set showtabline=2
 
 " leader settings
-let mapleader = "`"
-let g:mapleader = "`"
+let mapleader = ","
+let g:mapleader = ","
 
 
 nmap <leader>t <Esc>:tabnew<CR>
@@ -68,6 +68,9 @@ imap <C-s> <Esc>:w!<CR>
 nmap <leader>Q <Esc>:qa<CR>
 nmap <leader>q <Esc>:q<CR>
 nmap <C-q> <Esc>:q<CR>
+
+" json reformat (brew install yajl)
+nmap <leader>jf <Esc>:%!json_reformat<CR>
 
 " ruby functionality
 nmap <F5> <Esc>:!ruby -c %<CR>
