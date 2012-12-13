@@ -1,5 +1,6 @@
 # Zsh custom folder completions
 fpath=(~/zsh_completions $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 autoload -U colors compinit && colors
 compinit
