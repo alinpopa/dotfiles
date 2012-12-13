@@ -1,7 +1,6 @@
 ":set nocompatible
 call pathogen#infect()
 call pathogen#helptags()
-filetype on
 filetype indent on
 filetype plugin on
 set laststatus=2
@@ -107,11 +106,15 @@ if has("gui_running")
   colorscheme lucius
 endif
 
-au FileType erlang set sw=4 | set ts=4
-au FileType python set sw=4 | set ts=4
-au FileType ruby set sw=2 | set ts=2
-au FileType scala set sw=2 | set ts=2
-au FileType java set sw=4 | set ts=4
-"au FileType erlang setlocal sw=4 ts=4 et
+if has("autocmd")
+  filetype on
+
+  autocmd FileType erlang setlocal sw=4 ts=4
+  autocmd FileType python set sw=4 | set ts=4
+  autocmd FileType ruby set sw=2 | set ts=2
+  autocmd FileType scala set sw=2 | set ts=2
+  autocmd FileType java set sw=4 | set ts=4
+endif
+
 let g:CommandTMaxFiles = 35000
 
