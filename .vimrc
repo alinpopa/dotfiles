@@ -109,11 +109,11 @@ endif
 if has("autocmd")
   filetype on
 
-  autocmd FileType erlang setlocal sw=4 ts=4
-  autocmd FileType python set sw=4 | set ts=4
-  autocmd FileType ruby set sw=2 | set ts=2
-  autocmd FileType scala set sw=2 | set ts=2
-  autocmd FileType java set sw=4 | set ts=4
+  autocmd FileType erlang   setlocal sw=4 ts=4
+  autocmd FileType python   setlocal sw=4 ts=4
+  autocmd FileType ruby     setlocal sw=2 ts=2
+  autocmd FileType scala    setlocal sw=2 ts=2
+  autocmd FileType java     setlocal sw=4 ts=4
 endif
 
 let g:CommandTMaxFiles = 35000
