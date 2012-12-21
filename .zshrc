@@ -77,6 +77,7 @@ export M2_REPO="/Users/alin/.m2/repository"
 export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/httpcore/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
+export PLAY_HOME=~/apps/play
 
 export PATH=/usr/local/bin:"${PATH}"
 export PATH=${HOME_BIN}:${PATH}
@@ -95,6 +96,7 @@ export PATH=~/apps/play:"${PATH}"
 export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
 export PATH=${SBT_HOME}/bin:${PATH}
+export PATH=${PLAY_HOME}:${PATH}
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
