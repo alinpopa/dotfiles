@@ -8,6 +8,7 @@ if [ -z ${INPUT} ]; then
 elif [ -z ${OUTPUT} ]; then
   echo Output missing.
 else
-  mencoder ${INPUT} -o ${OUTPUT} -oac copy -ovc lavc -lavcopts vcodec=mpeg1video -of mpeg
+  ffmpeg -i ${INPUT} ${OUTPUT}.mp4
+  #mencoder ${INPUT} -o ${OUTPUT} -oac copy -ovc lavc -lavcopts vcodec=mpeg1video -of mpeg
 fi
 
