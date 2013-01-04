@@ -17,3 +17,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "vim-perl"]
+	path = vim-perl
+	url = git://github.com/vim-perl/vim-perl.git
