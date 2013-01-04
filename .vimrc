@@ -114,6 +114,8 @@ if has("autocmd")
   autocmd FileType ruby     setlocal sw=2 ts=2
   autocmd FileType scala    setlocal sw=2 ts=2
   autocmd FileType java     setlocal sw=4 ts=4
+
+  autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
 endif
 
 let g:CommandTMaxFiles = 35000
