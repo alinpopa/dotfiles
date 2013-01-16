@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# Copyright (c) 2011 Spawngrid, Inc
+# Copyright (c) 2011, 2012 Spawngrid, Inc
 # Copyright (c) 2011 Evax Software <contact(at)evax(dot)org>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,9 +37,6 @@ fi
 if [ -n "$KERL_SASL_STARTUP" ]; then
     _KSS="$KERL_SASL_STARTUP"
 fi
-if [ -n "$KERL_AGNER_AUTOINSTALL" ]; then
-    _KAA="$KERL_AGNER_AUTOINSTALL"
-fi
 if [ -n "$KERL_DEPLOY_SSH_OPTIONS" ]; then
     _KDSSH="$KERL_DEPLOY_SSH_OPTIONS"
 fi
@@ -48,7 +45,6 @@ if [ -n "$KERL_DEPLOY_RSYNC_OPTIONS" ]; then
 fi
 KERL_CONFIGURE_OPTIONS=
 KERL_CONFIGURE_APPLICATIONS=
-KERL_DISABLE_AGNER=
 KERL_SASL_STARTUP=
 KERL_INSTALL_MANPAGES=
 
@@ -66,9 +62,6 @@ if [ -n "$_KCA" ]; then
 fi
 if [ -n "$_KSS" ]; then
     KERL_SASL_STARTUP="$_KSS"
-fi
-if [ -n "$_KAA" ]; then
-    KERL_AGNER_AUTOINSTALL="$_KAA"
 fi
 if [ -n "$_KDSSH" ]; then
     KERL_DEPLOY_SSH_OPTIONS="$_KDSSH"
@@ -106,7 +99,7 @@ usage()
     echo "  build    Build specified release or git repository"
     echo "  install  Install the specified release at the given location"
     echo "  deploy   Deploy the specified installation to the given host and location"
-    echo "  update   Update agner or the list of available releases from erlang.org"
+    echo "  update   Update the list of available releases from erlang.org"
     echo "  list     List releases, builds and installations"
     echo "  delete   Delete builds and installations"
     echo "  active   Print the path of the active installation"
@@ -121,7 +114,7 @@ if [ $# -eq 0 ]; then usage; fi
 get_releases()
 {
     curl -s $ERLANG_DOWNLOAD_URL/ | \
-        sed $SED_OPT -e 's/^.*>otp_src_(R1[-1234567890ABCD]+)\.tar\.gz<.*$/\1/' \
+        sed $SED_OPT -e 's/^.*<[aA] [hH][rR][eE][fF]=\"\/download\/otp_src_(R1[-1234567890ABCD]+)\.tar\.gz\">.*$/\1/' \
                      -e '/^R/!d'
 }
 
@@ -146,30 +139,9 @@ check_releases()
     fi
 }
 
-# c.f. agner issue #98
-# https://github.com/agner/agner/issues/#issue/98
-KERL_NO_AGNER_SUPPORT="R10B-0 R10B-2 R10B-3 R10B-4 R10B-5 R10B-6 R10B-7
-R10B-8 R10B-9 R11B-0 R11B-1 R11B-2 R11B-3 R11B-4 R11B-5 R12B-0 R12B-1
-R12B-2 R12B-3 R12B-4 R12B-5 R13A R13B R13B01 R13B02 R13B03 R13B04"
-
 KERL_NO_LION_SUPPORT="R10B-0 R10B-2 R10B-3 R10B-4 R10B-5 R10B-6 R10B-7
 R10B-8 R10B-9 R11B-0 R11B-1 R11B-2 R11B-3 R11B-4 R11B-5 R12B-0 R12B-1
 R12B-2 R12B-3 R12B-4 R12B-5 R13A R13B R13B01 R13B02 R13B03 R13B04 R14A R14B R14B01 R14B02 R14B03"
-
-agner_support()
-{
-    if [ -n "$KERL_DISABLE_AGNER" ]; then
-        return 1;
-    fi
-
-    for v in $KERL_NO_AGNER_SUPPORT; do
-        if [ "$v" = "$1" ]; then
-            return 1
-        fi
-    done
-
-    return 0
-}
 
 lion_support() {
     for v in $KERL_NO_LION_SUPPORT; do
@@ -232,24 +204,6 @@ assert_valid_installation()
     return 0
 }
 
-do_update_agner()
-{
-    rel=`get_release_from_name $1`
-    if [ $? -ne 0 ]; then
-        echo "Unknown build name $1"
-        exit 1
-    fi
-    TARGET="$KERL_BUILD_DIR/$1/release_$rel"
-    cd "$KERL_BUILD_DIR/$1/agner_$rel" && \
-        git pull &&
-        PATH="$KERL_BUILD_DIR/$1/otp_src_$rel/bin:$PATH" \
-            make > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        return 1
-    fi
-    return 0
-}
-
 assert_build_name_unused()
 {
     if [ -f "$KERL_BASE_DIR/otp_builds" ]; then
@@ -303,7 +257,7 @@ do_git_build()
     fi
     cd otp_src_git
     git branch -a | grep "$2" > /dev/null 2>&1
-    if [ $? -ne 0 ]; then
+    if [ $? -eq 0 ]; then
         git checkout $2 > /dev/null 2>&1
     else
         git checkout -b $2 origin/$2 > /dev/null 2>&1
@@ -342,17 +296,6 @@ do_git_build()
     ./Install $INSTALL_OPT "$KERL_BUILD_DIR/$3/release_git" > /dev/null 2>&1
     echo "Erlang/OTP $3 from git has been successfully built"
     list_add builds "git,$3"
-    if [ -z "$KERL_DISABLE_AGNER" ]; then
-        echo "Fetching and building agner..."
-        cd "$KERL_BUILD_DIR/$3" && \
-        git clone https://github.com/agner/agner.git agner_git > /dev/null 2>&1 && \
-            cd agner_git && \
-            PATH="$KERL_BUILD_DIR/$3/otp_src_git/bin:$PATH" make > /dev/null 2>&1 && \
-        if [ $? -ne 0 ]; then
-            echo "Agner install failed"; exit 1
-        fi
-        echo "Agner has been successfully built"
-    fi
 }
 
 do_build()
@@ -383,7 +326,11 @@ do_build()
     mkdir -p "$KERL_BUILD_DIR/$2"
     if [ ! -d "$KERL_BUILD_DIR/$2/otp_src_$1" ]; then
         echo "Extracting source code"
-        cd "$KERL_BUILD_DIR/$2" && tar xfz "$KERL_DOWNLOAD_DIR/$FILENAME"
+        UNTARDIRNAME="$KERL_BUILD_DIR/$2/otp_src_$1-kerluntar-$$"
+        rm -rf "$UNTARDIRNAME"
+        mkdir -p "$UNTARDIRNAME"
+        (cd "$UNTARDIRNAME" && tar xfz "$KERL_DOWNLOAD_DIR/$FILENAME" && mv * "$KERL_BUILD_DIR/$2/otp_src_$1")
+        rm -rf "$UNTARDIRNAME"
     fi
     echo "Building Erlang/OTP $1 ($2), please wait..."
     ERL_TOP="$KERL_BUILD_DIR/$2/otp_src_$1"
@@ -424,17 +371,6 @@ do_build()
     ./Install $INSTALL_OPT "$KERL_BUILD_DIR/$2/release_$1" > /dev/null 2>&1
     echo "Erlang/OTP $1 ($2) has been successfully built"
     list_add builds "$1,$2"
-    if agner_support $1; then
-        echo "Fetching and building agner..."
-        cd "$KERL_BUILD_DIR/$2" && \
-        git clone https://github.com/agner/agner.git agner_$1 > /dev/null 2>&1 && \
-            cd agner_$1 && \
-            PATH="$KERL_BUILD_DIR/$2/otp_src_$1/bin:$PATH" make > /dev/null 2>&1 && \
-        if [ $? -ne 0 ]; then
-            echo "Agner install failed"; exit 1
-        fi
-        echo "Agner has been successfully built"
-    fi
 }
 
 do_install()
@@ -474,16 +410,6 @@ kerl_deactivate()
         export MANPATH
         unset _KERL_SAVED_MANPATH
     fi
-    if [ -n "\$_KERL_SAVED_AGNER_BIN" ]; then
-        AGNER_BIN="\$_KERL_SAVED_AGNER_BIN"
-        export AGNER_BIN
-        unset _KERL_SAVED_AGNER_BIN
-    fi
-    if [ -n "\$_KERL_SAVED_AGNER_EXACT_PREFIX" ]; then
-        AGNER_EXACT_PREFIX="\$_KERL_SAVED_AGNER_EXACT_PREFIX"
-        export AGNER_EXACT_PREFIX
-        unset _KERL_SAVED_AGNER_EXACT_PREFIX
-    fi
     if [ -n "\$_KERL_SAVED_REBAR_PLT_DIR" ]; then
         REBAR_PLT_DIR="\$_KERL_SAVED_REBAR_PLT_DIR"
         export REBAR_PLT_DIR
@@ -501,40 +427,18 @@ _KERL_SAVED_PATH="\$PATH"
 export _KERL_SAVED_PATH
 _KERL_SAVED_MANPATH="\$MANPATH"
 export _KERL_SAVED_MANPATH
-_KERL_SAVED_AGNER_BIN="\$AGNER_BIN"
-export _KERL_SAVED_AGNER_BIN
-_KERL_SAVED_AGNER_EXACT_PREFIX="\$AGNER_EXACT_PREFIX"
-export _KERL_SAVED_AGNER_EXACT_PREFIX
 _KERL_SAVED_REBAR_PLT_DIR="\$REBAR_PLT_DIR"
 export _KERL_SAVED_REBAR_PLT_DIR
 PATH="$absdir/bin:\$PATH"
 export PATH
 MANPATH="$absdir/man:\$MANPATH"
 export MANPATH
-AGNER_BIN="$absdir/bin"
-export AGNER_BIN
-AGNER_EXACT_PREFIX="$absdir/lib"
-export AGNER_EXACT_PREFIX
 REBAR_PLT_DIR="$absdir"
 export REBAR_PLT_DIR
 if [ -n "\$BASH" -o -n "\$ZSH_VERSION" ]; then
     hash -r
 fi
 ACTIVATE
-    if agner_support $1; then
-        echo "Installing agner in $absdir..."
-        cp "$KERL_BUILD_DIR/$1/agner_$rel/agner" "$absdir/bin/"
-        if [ -n "$KERL_INSTALL_AGNERIZED_REBAR" ]; then
-            echo "Installing agnerized rebar in $absdir..."
-            cp "$KERL_BUILD_DIR/$1/agner_$rel/agner" "$absdir/bin/rebar"
-        fi
-        if [ -n "$KERL_AGNER_AUTOINSTALL" ]; then
-            for i in $KERL_AGNER_AUTOINSTALL; do
-                echo "Autoinstalling $i"
-                agner install $i > /dev/null 2>&1
-            done
-        fi
-    fi
     if [ "$rel" != "git" -a -n "$KERL_INSTALL_MANPAGES" ]; then
         echo "Fetching and installing manpages..."
         FILENAME=otp_doc_man_$rel.tar.gz
@@ -668,7 +572,7 @@ cleanup_usage()
 
 update_usage()
 {
-    echo "usage: $0 $1 <releases|agner>"
+    echo "usage: $0 $1 <releases>"
 }
 
 get_active_path()
@@ -776,21 +680,6 @@ case "$1" in
                 check_releases
                 echo "The available releases are:"
                 list_print releases spaces
-                ;;
-            agner)
-                if [ $# -ne 3 ]; then
-                    echo "usage: $0 $1 $2 <build_name>"
-                    exit 1
-                fi
-                if agner_support $3; then
-                    echo "Updating agner for build $3..."
-                    if do_update_agner $3; then
-                        echo "agner has been updated successfully"
-                    else
-                        echo "failed to update agner"
-                        exit 1
-                    fi
-                fi
                 ;;
             *)
                 update_usage
@@ -906,6 +795,6 @@ case "$1" in
         esac
         ;;
     *)
-        echo "unkwnown command: $1"; usage; exit 1
+        echo "unknown command: $1"; usage; exit 1
         ;;
 esac
