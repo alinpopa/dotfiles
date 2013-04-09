@@ -7,6 +7,7 @@ FILES=".bash_profile \
   .gemrc \
   .vim \
   .vimrc \
+  .zshenv \
   .zshrc \
   .zprofile \
   .kerlrc \
