@@ -21,6 +21,8 @@ export ANT_HOME=~/apps/ant
 export ANT_OPTS="-Xmx512m"
 ###
 
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
+
 export SVN_EDITOR=vim
 export HOME_BIN=~/bin
 export GOROOT=~/apps/go
@@ -30,7 +32,6 @@ export SCALA_HOME=/Users/alin/apps/scala
 export NODE_HOME=/Users/alin/usr/local/node
 export PROTOBUF_HOME="${HOME}/apps/protobuf"
 export RIAK_BIN_DIR="/Users/alin/apps/riak/bin"
-export SBT_HOME="/Users/alin/apps/sbt"
 export SML_HOME="/usr/local/Cellar/smlnj/110.75/libexec/bin"
 
 export WORKON_HOME=$HOME/.virtualenvs
@@ -63,7 +64,6 @@ export PATH=/usr/local/mysql/bin:"${PATH}"
 export PATH=~/apps/play:"${PATH}"
 export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
-export PATH=${SBT_HOME}/bin:${PATH}
 export PATH=${PLAY_HOME}:${PATH}
 export PATH=${SML_HOME}:${PATH}
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
