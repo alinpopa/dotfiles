@@ -49,7 +49,6 @@ export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
 export PLAY_HOME=~/apps/play
 
-export PATH=/usr/local/bin:"${PATH}"
 export PATH=${HOME_BIN}:${PATH}
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"

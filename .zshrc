@@ -29,6 +29,8 @@ function pip_upgrade_all () {
 precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
+export PATH=/usr/local/bin:"${PATH}"
+
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
 alias grep='grep --color=auto'
