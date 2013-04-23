@@ -45,6 +45,7 @@ export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=/usr/local/share/python:${PATH}
 export PATH=${PLAY_HOME}:${PATH}
 export PATH=${SML_HOME}:${PATH}
+export PATH="${JUSTNIFFER_HOME}/bin":${PATH}
 export PATH=/usr/local/bin:"${PATH}"
 
 alias ls='ls -Fl -G'

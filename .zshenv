@@ -48,9 +48,11 @@ export SCALA_CLASSPATH="${M2_REPO}/org/apache/httpcomponents/httpclient/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/httpcore/4.0.1/*"
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
 export PLAY_HOME=~/apps/play
+export JUSTNIFFER_HOME=~/apps/justsniffer
 
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
+export MANPATH="${JUSTNIFFER_HOME}/share/man":${MANPATH}
 
