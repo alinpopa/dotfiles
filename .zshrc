@@ -29,6 +29,22 @@ function pip_upgrade_all () {
 precmd () {print -Pn "\e]2; %~/ \a"}
 preexec () {print -Pn "\e]2; %~/ \a"}
 
+export PATH=${HOME_BIN}:${PATH}
+export PATH="${PATH}":"${JRUBY_HOME}"/bin
+export PATH="${ANT_HOME}"/bin:"${PATH}"
+export PATH=~/apps/maven/bin:"${PATH}"
+export PATH=~/apps/xmlbeans/bin:"${PATH}"
+export PATH=~/apps/scala/bin:"${PATH}"
+export PATH="${SCALA_HOME}":"${PATH}"
+export PATH="${NODE_HOME}/bin":"${PATH}"
+export PATH=/usr/local/sbin:"${PATH}"
+export PATH=~/.cabal/bin:"${PATH}"
+export PATH=/usr/local/mysql/bin:"${PATH}"
+export PATH=~/apps/play:"${PATH}"
+export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
+export PATH=/usr/local/share/python:${PATH}
+export PATH=${PLAY_HOME}:${PATH}
+export PATH=${SML_HOME}:${PATH}
 export PATH=/usr/local/bin:"${PATH}"
 
 alias ls='ls -Fl -G'

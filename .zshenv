@@ -49,26 +49,8 @@ export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
 export PLAY_HOME=~/apps/play
 
-export PATH=${HOME_BIN}:${PATH}
-export PATH="${PATH}":"${JRUBY_HOME}"/bin
-export PATH="${ANT_HOME}"/bin:"${PATH}"
-export PATH=~/apps/maven/bin:"${PATH}"
-export PATH=~/apps/xmlbeans/bin:"${PATH}"
-export PATH=~/apps/scala/bin:"${PATH}"
-export PATH="${SCALA_HOME}":"${PATH}"
-export PATH="${NODE_HOME}/bin":"${PATH}"
-export PATH=/usr/local/sbin:"${PATH}"
-export PATH=~/.cabal/bin:"${PATH}"
-export PATH=/usr/local/mysql/bin:"${PATH}"
-export PATH=~/apps/play:"${PATH}"
-export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
-export PATH=/usr/local/share/python:${PATH}
-export PATH=${PLAY_HOME}:${PATH}
-export PATH=${SML_HOME}:${PATH}
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 
 export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
