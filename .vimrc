@@ -119,4 +119,4 @@ if has("autocmd")
 endif
 
 let g:CommandTMaxFiles = 35000
-
+let g:ctrlp_max_files = 35000
