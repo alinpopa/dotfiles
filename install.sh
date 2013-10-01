@@ -11,6 +11,7 @@ FILES=".bash_profile \
   .zshrc \
   .zprofile \
   .kerlrc \
+  .screenrc \
   bin \
   zsh_completions"
 
