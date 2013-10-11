@@ -58,3 +58,5 @@ alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :Doc
 alias tinyscheme="rlwrap scheme"
 
 [[ -s "/Users/alin/.rvm/scripts/rvm" ]] && source "/Users/alin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
