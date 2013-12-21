@@ -46,6 +46,7 @@ export PATH="${PROTOBUF_HOME}/bin":"${PATH}"
 export PATH=${PLAY_HOME}:${PATH}
 export PATH=${SML_HOME}:${PATH}
 export PATH="${JUSTNIFFER_HOME}/bin":${PATH}
+export PATH="${HOME}/.rbenv/bin":${PATH}
 export PATH=/usr/local/bin:"${PATH}"
 
 alias ls='ls -Fl -G'
@@ -58,5 +59,6 @@ alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :Doc
 alias tinyscheme="rlwrap scheme"
 
 #[[ -s "/Users/alin/.rvm/scripts/rvm" ]] && source "/Users/alin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
