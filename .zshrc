@@ -48,6 +48,7 @@ export PATH=${SML_HOME}:${PATH}
 export PATH="${JUSTNIFFER_HOME}/bin":${PATH}
 export PATH="${HOME}/.rbenv/bin":${PATH}
 export PATH=/usr/local/bin:"${PATH}"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
