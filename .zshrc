@@ -60,5 +60,4 @@ alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :Doc
 alias tinyscheme="rlwrap scheme"
 
 source "/Users/alin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-eval "$(rbenv init -)"
 
