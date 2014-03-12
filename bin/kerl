@@ -121,8 +121,8 @@ if [ $# -eq 0 ]; then usage; fi
 get_releases()
 {
     curl -s $ERLANG_DOWNLOAD_URL/ | \
-        sed $SED_OPT -e 's/^.*<[aA] [hH][rR][eE][fF]=\"\/download\/otp_src_(R1[-0-9A-Za-z_]+)\.tar\.gz\">.*$/\1/' \
-                     -e '/^R/!d'
+        sed $SED_OPT -e 's/^.*<[aA] [hH][rR][eE][fF]=\"\/download\/otp_src_([-0-9A-Za-z_.]+)\.tar\.gz\">.*$/\1/' \
+                     -e '/^R1|^[0-9]/!d'
 }
 
 update_checksum_file()
@@ -432,21 +432,24 @@ do_install()
 # credits to virtualenv
 kerl_deactivate()
 {
-    if [ -n "\$_KERL_SAVED_PATH" ]; then
-        PATH="\$_KERL_SAVED_PATH"
+    if [ -n "\$_KERL_PATH_REMOVABLE" ]; then
+        PATH=\${PATH//\${_KERL_PATH_REMOVABLE}:/}
         export PATH
-        unset _KERL_SAVED_PATH
+        unset _KERL_PATH_REMOVABLE
     fi
-    if [ -n "\$_KERL_SAVED_MANPATH" ]; then
-        MANPATH="\$_KERL_SAVED_MANPATH"
+    if [ -n "\$_KERL_MANPATH_REMOVABLE" ]; then
+        MANPATH=\${MANPATH//\${_KERL_MANPATH_REMOVABLE}:/}
         export MANPATH
-        unset _KERL_SAVED_MANPATH
+        unset _KERL_MANPATH_REMOVABLE
     fi
     if [ -n "\$_KERL_SAVED_REBAR_PLT_DIR" ]; then
         REBAR_PLT_DIR="\$_KERL_SAVED_REBAR_PLT_DIR"
         export REBAR_PLT_DIR
         unset _KERL_SAVED_REBAR_PLT_DIR
     fi
+    if [ -n "\$_KERL_ACTIVE_DIR" ]; then
+        unset _KERL_ACTIVE_DIR
+    fi 
     if [ -n "\$_KERL_SAVED_PS1" ]; then
         PS1="\$_KERL_SAVED_PS1"
         export PS1
@@ -460,18 +463,19 @@ kerl_deactivate()
     fi
 }
 kerl_deactivate nondestructive
-_KERL_SAVED_PATH="\$PATH"
-export _KERL_SAVED_PATH
-_KERL_SAVED_MANPATH="\$MANPATH"
-export _KERL_SAVED_MANPATH
+
 _KERL_SAVED_REBAR_PLT_DIR="\$REBAR_PLT_DIR"
 export _KERL_SAVED_REBAR_PLT_DIR
-PATH="$absdir/bin:\$PATH"
-export PATH
-MANPATH="$absdir/man:\$MANPATH"
-export MANPATH
+_KERL_PATH_REMOVABLE="$absdir/bin"
+PATH="\${_KERL_PATH_REMOVABLE}:\$PATH"
+export PATH _KERL_PATH_REMOVABLE
+_KERL_MANPATH_REMOVABLE="$absdir/man"
+MANPATH="\${_KERL_MANPATH_REMOVABLE}:\$MANPATH"
+export MANPATH _KERL_MANPATH_REMOVABLE
 REBAR_PLT_DIR="$absdir"
 export REBAR_PLT_DIR
+_KERL_ACTIVE_DIR="$absdir"
+export _KERL_ACTIVE_DIR
 if [ -f "$KERL_CONFIG" ]; then . "$KERL_CONFIG"; fi
 if [ -n "\$KERL_ENABLE_PROMPT" ]; then
     _KERL_SAVED_PS1="\$PS1"
@@ -646,8 +650,8 @@ update_usage()
 
 get_active_path()
 {
-    if [ -n "$_KERL_SAVED_PATH" ]; then
-        echo $PATH | cut -d ":" -f 1 | sed 's/\(.*\)..../\1/'
+    if [ -n "$_KERL_ACTIVE_DIR" ]; then
+        echo $_KERL_ACTIVE_DIR
     fi
     return 0
 }
