@@ -22,7 +22,7 @@ export ANT_OPTS="-Xmx512m"
 ###
 
 export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Xms512m -Xmx1g"
-export _JAVA_OPTIONS=$SBT_OPTS
+#export _JAVA_OPTIONS=$SBT_OPTS
 
 export SVN_EDITOR=vim
 export HOME_BIN=~/bin
