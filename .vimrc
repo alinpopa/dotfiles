@@ -103,8 +103,16 @@ set vb t_vb=
 nmap nt <Esc>:NERDTreeToggle<CR>
 
 if has("gui_running")
+  set guioptions-=T
+  set guioptions-=e
+  set t_Co=256
+  set guitablabel=%M\ %t
   colorscheme lucius
+else
+  colorscheme desert
 endif
+
+hi Visual guifg=White guibg=LightBlue gui=none
 
 if has("autocmd")
   filetype on
@@ -120,3 +128,4 @@ endif
 
 let g:CommandTMaxFiles = 35000
 let g:ctrlp_max_files = 35000
+
