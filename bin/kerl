@@ -46,6 +46,9 @@ fi
 if [ -n "$KERL_DEPLOY_RSYNC_OPTIONS" ]; then
     _KDRSYNC="$KERL_DEPLOY_RSYNC_OPTIONS"
 fi
+if [ -n "KERL_INSTALL_MANPAGES" ]; then
+    _KIM="$KERL_INSTALL_MANPAGES"
+fi
 KERL_CONFIGURE_OPTIONS=
 KERL_CONFIGURE_APPLICATIONS=
 KERL_CONFIGURE_DISABLE_APPLICATIONS=
@@ -75,6 +78,9 @@ if [ -n "$_KDSSH" ]; then
 fi
 if [ -n "$_KDRSYNC" ]; then
     KERL_DEPLOY_RSYNC_OPTIONS="$_KDRSYNC"
+fi
+if [ -n "$_KIM" ]; then
+    KERL_INSTALL_MANPAGES="$_KIM"
 fi
 
 if [ -z "$KERL_SASL_STARTUP" ]; then
@@ -120,15 +126,16 @@ if [ $# -eq 0 ]; then usage; fi
 
 get_releases()
 {
-    curl -s $ERLANG_DOWNLOAD_URL/ | \
+    curl -L -s $ERLANG_DOWNLOAD_URL/ | \
         sed $SED_OPT -e 's/^.*<[aA] [hH][rR][eE][fF]=\"\/download\/otp_src_([-0-9A-Za-z_.]+)\.tar\.gz\">.*$/\1/' \
-                     -e '/^R1|^[0-9]/!d'
+                     -e '/^R1|^[0-9]/!d' | \
+        sed -e "s/^R\(.*\)/\1:R\1/" | sed -e "s/^\([^\:]*\)$/\1-z:\1/" | sort | cut -d':' -f2
 }
 
 update_checksum_file()
 {
     echo "Getting the checksum file from erlang.org..."
-    curl $ERLANG_DOWNLOAD_URL/MD5 > "$KERL_DOWNLOAD_DIR/MD5" || exit 1
+    curl -L $ERLANG_DOWNLOAD_URL/MD5 > "$KERL_DOWNLOAD_DIR/MD5" || exit 1
 }
 
 ensure_checksum_file()
@@ -645,7 +652,7 @@ cleanup_usage()
 
 update_usage()
 {
-    echo "usage: $0 $1 <releases>"
+    echo "usage: $0 update releases"
 }
 
 get_active_path()
@@ -682,7 +689,7 @@ download()
     if [ ! -f "$KERL_DOWNLOAD_DIR/$1" ]; then
         echo "Downloading $1 to $KERL_DOWNLOAD_DIR"
         mkdir -p "$KERL_DOWNLOAD_DIR"
-        curl "$ERLANG_DOWNLOAD_URL/$1" > "$KERL_DOWNLOAD_DIR/$1"
+        curl -L "$ERLANG_DOWNLOAD_URL/$1" > "$KERL_DOWNLOAD_DIR/$1"
         update_checksum_file
     fi
     ensure_checksum_file
@@ -794,12 +801,14 @@ case "$1" in
                 rel=`get_release_from_name $3`
                 if [ -d "$KERL_BUILD_DIR/$3" ]; then
                     rm -Rf "$KERL_BUILD_DIR/$3"
-                    list_remove $2s "$rel,$3"
-                    echo "The $3 build has been deleted"
                 else
-                    echo "No build named $3"
-                    exit 1
+                    if [ -z "$rel" ]; then
+                      echo "No build named $3"
+                      exit 1
+                    fi
                 fi
+                list_remove $2s "$rel,$3"
+                echo "The $3 build has been deleted"
                 ;;
             installation)
                 assert_valid_installation "$3"
