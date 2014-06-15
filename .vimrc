@@ -112,7 +112,7 @@ else
   colorscheme desert
 endif
 
-hi Visual guifg=White guibg=LightBlue gui=none
+hi Visual guifg=Yellow guibg=LightBlue gui=none
 
 if has("autocmd")
   filetype on
