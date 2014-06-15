@@ -31,7 +31,6 @@ export GOOS=darwin
 export GOARCH=amd64
 export SCALA_HOME=/Users/alin/apps/scala
 export NODE_HOME=/Users/alin/usr/local/node
-export PROTOBUF_HOME="${HOME}/apps/protobuf"
 export RIAK_BIN_DIR="/Users/alin/apps/riak/bin"
 export SML_HOME="/usr/local/Cellar/smlnj/110.75/libexec/bin"
 
