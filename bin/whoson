@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if [[ $1 -eq 0 ]] ; then
+  echo 'Port not set'
+  exit 0
+fi
+lsof -n -i4TCP:$1 | grep LISTEN
+
