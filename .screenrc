@@ -1,6 +1,7 @@
 shell -${SHELL}
-screen
-screen $SHELL -c 'screen -X caption always "$STY"'
+#screen
+#screen $SHELL -c 'screen -X caption always "$STY"'
 hardstatus alwayslastline 
 # Very nice tabbed colored hardstatus line
-hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+hardstatus string "screen %=%H | %t"
+#hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
