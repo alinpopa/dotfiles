@@ -60,5 +60,7 @@ alias mvim='mvim -c NERDTreeToggle'
 alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 alias tinyscheme="rlwrap scheme"
 
-source "/Users/alin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+#source "/Users/alin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

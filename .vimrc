@@ -107,10 +107,8 @@ if has("gui_running")
   set guioptions-=e
   set t_Co=256
   set guitablabel=%M\ %t
-  colorscheme lucius
-else
-  colorscheme desert
 endif
+colorscheme lucius
 
 hi Visual guifg=Yellow guibg=LightBlue gui=none
 
