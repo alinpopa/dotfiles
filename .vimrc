@@ -102,12 +102,16 @@ set vb t_vb=
 " NERDTree
 nmap nt <Esc>:NERDTreeToggle<CR>
 
-if has("gui_running")
-  set guioptions-=T
-  set guioptions-=e
-  set t_Co=256
-  set guitablabel=%M\ %t
-endif
+"if has("gui_running")
+"  set guioptions-=T
+"  set guioptions-=e
+"  set t_Co=256
+"  set guitablabel=%M\ %t
+"endif
+set guioptions-=T
+set guioptions-=e
+set t_Co=256
+set guitablabel=%M\ %t
 colorscheme lucius
 
 hi Visual guifg=Yellow guibg=LightBlue gui=none
