@@ -26,9 +26,6 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M -Xms512m -Xm
 
 export SVN_EDITOR=vim
 export HOME_BIN=~/bin
-export GOROOT=~/apps/go
-export GOOS=darwin
-export GOARCH=amd64
 export SCALA_HOME=/Users/alin/apps/scala
 export NODE_HOME=/Users/alin/usr/local/node
 export RIAK_BIN_DIR="/Users/alin/apps/riak/bin"
