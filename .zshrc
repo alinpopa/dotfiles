@@ -33,6 +33,7 @@ export PATH=${HOME_BIN}:${PATH}
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
 export PATH=~/apps/maven/bin:"${PATH}"
+export PATH=~/apps/gradle/bin:"${PATH}"
 export PATH=~/apps/xmlbeans/bin:"${PATH}"
 export PATH=~/apps/scala/bin:"${PATH}"
 export PATH="${SCALA_HOME}":"${PATH}"
