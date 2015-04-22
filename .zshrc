@@ -65,3 +65,8 @@ alias tinyscheme="rlwrap scheme"
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+function java8 () {
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+}
+
