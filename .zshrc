@@ -8,7 +8,7 @@ compinit
 PROMPT="%{$fg[green]%}%c %{$reset_color%}%% "
 
 # History stuff
-HISTSIZE=1000
+HISTSIZE=10000
 HISTFILE=~/.history
 SAVEHIST=500
 #setopt SHARE_HISTORY
