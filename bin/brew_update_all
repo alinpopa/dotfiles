@@ -1,4 +1,4 @@
 #!/bin/bash
 #brew update && brew upgrade -v $(brew outdated)
-brew update && brew upgrade $(brew outdated)
+brew update && brew upgrade --all $(brew outdated)
 
