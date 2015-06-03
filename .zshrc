@@ -74,7 +74,7 @@ function urlencode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_escape($_),"\n"'
 }
 
-function urldencode () {
+function urldecode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
 }
 
