@@ -70,3 +70,11 @@ function java8 () {
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 }
 
+function urlencode () {
+  echo $1 | perl -MURI::Escape -ne 'chomp;print uri_escape($_),"\n"'
+}
+
+function urldencode () {
+  echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
+}
+
