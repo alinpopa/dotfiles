@@ -126,6 +126,7 @@ if has("autocmd")
   autocmd FileType java     setlocal sw=4 ts=4
 
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
+  autocmd BufNewFile,BufRead *.nut set filetype=squirrel
 endif
 
 let g:CommandTMaxFiles = 35000
