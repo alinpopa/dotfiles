@@ -29,3 +29,6 @@
 [submodule ".vim/bundle/rust"]
 	path = .vim/bundle/rust
 	url = git://github.com/rust-lang/rust.vim.git
+[submodule ".vim/bundle/vim-perl"]
+	path = .vim/bundle/vim-perl
+	url = git://github.com/vim-perl/vim-perl.git
