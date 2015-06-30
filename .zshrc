@@ -78,3 +78,5 @@ function urldecode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
 }
 
+eval "$(direnv hook zsh)"
+
