@@ -80,3 +80,6 @@ function urldecode () {
 
 eval "$(direnv hook zsh)"
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
