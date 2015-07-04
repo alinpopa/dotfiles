@@ -129,8 +129,14 @@ function urldecode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
 }
 
-eval "$(direnv hook bash)"
+if hash direnv 2>/dev/null; then
+  eval "$(direnv hook bash)"
+fi
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if hash brew 2>/dev/null; then
+  if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+  fi
+fi
 
