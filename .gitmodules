@@ -29,3 +29,6 @@
 [submodule ".vim/bundle/vim-perl"]
 	path = .vim/bundle/vim-perl
 	url = git://github.com/vim-perl/vim-perl.git
+[submodule ".vim/bundle/vimerl"]
+	path = .vim/bundle/vimerl
+	url = git@github.com:alinpopa/vimerl.git
