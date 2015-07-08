@@ -134,9 +134,11 @@ if hash direnv 2>/dev/null; then
   eval "$(direnv hook bash)"
 fi
 
-if hash brew 2>/dev/null; then
-  if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-    source $(brew --prefix nvm)/nvm.sh
+function nvm () {
+  if hash brew 2>/dev/null; then
+    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+      source $(brew --prefix nvm)/nvm.sh
+    fi
   fi
-fi
+}
 
