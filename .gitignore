@@ -1,4 +1,5 @@
 .vim/doc/tags
 *.swp
 .vim/ruby/
+.vim/bundle/
 
