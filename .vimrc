@@ -1,4 +1,3 @@
-set nocompatible
 "call pathogen#infect()
 "call pathogen#helptags()
 
@@ -11,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'git://github.com/kien/ctrlp.vim.git'
+Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
@@ -20,10 +19,12 @@ Plugin 'https://github.com/tfnico/vim-gradle.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'git://github.com/rust-lang/rust.vim.git'
-"Plugin 'git://github.com/vim-perl/vim-perl.git'
+Plugin 'git://github.com/vim-perl/vim-perl.git'
 Plugin 'git://github.com/alinpopa/vimerl.git'
 
 call vundle#end()
+
+set nocompatible
 
 filetype indent on
 filetype plugin on
