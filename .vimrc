@@ -21,6 +21,7 @@ Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'git://github.com/rust-lang/rust.vim.git'
 Plugin 'git://github.com/vim-perl/vim-perl.git'
 Plugin 'git://github.com/alinpopa/vimerl.git'
+Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 
 call vundle#end()
 
