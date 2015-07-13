@@ -2,12 +2,9 @@
 
 DOTFILES=~/dotfiles
 
-FILES=".bash_profile \
-  .bashrc \
-  .gemrc \
+FILES=".gemrc \
   .vim \
   .vimrc \
-  .zshenv \
   .zshrc \
   .zprofile \
   .kerlrc \
