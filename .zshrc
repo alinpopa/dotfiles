@@ -134,6 +134,12 @@ function urldecode () {
 
 eval "$(direnv hook zsh)"
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+function nvm () {
+  if hash brew 2>/dev/null; then
+    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+      export NVM_DIR=~/.nvm
+      source $(brew --prefix nvm)/nvm.sh
+    fi
+  fi
+}
 
