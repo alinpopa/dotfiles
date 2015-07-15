@@ -22,6 +22,7 @@ Plugin 'git://github.com/rust-lang/rust.vim.git'
 Plugin 'git://github.com/vim-perl/vim-perl.git'
 Plugin 'git://github.com/alinpopa/vimerl.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
+Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 
 call vundle#end()
 
