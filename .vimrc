@@ -126,9 +126,6 @@ set vb t_vb=
 " show hiden characters (like line feed)
 "set list
 
-" NERDTree
-nmap nt <Esc>:NERDTreeToggle<CR>
-
 "if has("gui_running")
 "  set guioptions-=T
 "  set guioptions-=e
