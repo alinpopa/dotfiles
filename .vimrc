@@ -23,6 +23,7 @@ Plugin 'git://github.com/vim-perl/vim-perl.git'
 Plugin 'git://github.com/alinpopa/vimerl.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
+Plugin 'https://github.com/scrooloose/syntastic.git'
 
 call vundle#end()
 
@@ -155,4 +156,14 @@ endif
 
 let g:CommandTMaxFiles = 35000
 let g:ctrlp_max_files = 35000
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_erlang_checkers=['syntaxerl']
 
