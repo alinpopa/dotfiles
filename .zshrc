@@ -1,3 +1,4 @@
+ulimit -n 8192
 # Zsh custom folder completions
 fpath=(~/zsh_completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
