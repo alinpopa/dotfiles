@@ -101,7 +101,6 @@ export PATH="${JUSTNIFFER_HOME}/bin":${PATH}
 export PATH="${HOME}/.rbenv/bin":${PATH}
 export PATH=/usr/local/bin:"${PATH}"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export NVM_DIR=~/.nvm
 
 alias ls='ls -Fl -G'
