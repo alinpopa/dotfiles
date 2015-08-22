@@ -77,6 +77,7 @@ export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/org/apache/httpcomponents/
 export SCALA_CLASSPATH="${SCALA_CLASSPATH}:${M2_REPO}/commons-logging/commons-logging/1.1.1/*"
 export PLAY_HOME=~/apps/play
 export JUSTNIFFER_HOME=~/apps/justsniffer
+export MZBENCH_HOME=~/apps/mzbench
 
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 
@@ -106,6 +107,7 @@ export PATH="${HOME}/.rbenv/bin":${PATH}
 export PATH=/usr/local/bin:"${PATH}"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export PATH=~/apps/mzbench/bin:${PATH}
 
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
@@ -135,12 +137,10 @@ function urldecode () {
 
 eval "$(direnv hook zsh)"
 
-function nvm () {
-  if hash brew 2>/dev/null; then
-    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-      export NVM_DIR=~/.nvm
-      source $(brew --prefix nvm)/nvm.sh
-    fi
+if hash brew 2>/dev/null; then
+  if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
   fi
-}
+fi
 
