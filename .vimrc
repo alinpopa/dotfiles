@@ -29,7 +29,7 @@ Plugin 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
-Plugin 'jonathanfilip/vim-lucius'
+Plugin 'https://github.com/alinpopa/lucius.vim.git'
 
 call vundle#end()
 
@@ -149,7 +149,6 @@ set guioptions-=e
 set t_Co=256
 set guitablabel=%M\ %t
 colorscheme lucius
-LuciusBlack
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 
