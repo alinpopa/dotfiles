@@ -29,6 +29,7 @@ Plugin 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
+Plugin 'jonathanfilip/vim-lucius'
 
 call vundle#end()
 
@@ -114,6 +115,11 @@ nmap <F6> <Esc>:!ruby %<CR>
 " clojure functionality
 nmap clj <Esc>:!clj %<CR>
 
+noremap  <Up> <Nop>
+noremap  <Down> <Nop>
+noremap  <Left> <Nop>
+noremap  <Right> <Nop>
+
 let g:vimclojure#HighlightBuiltins = 1
 let g:vimclojure#ParenRainbow = 1
 
@@ -143,8 +149,9 @@ set guioptions-=e
 set t_Co=256
 set guitablabel=%M\ %t
 colorscheme lucius
+LuciusBlack
 
-hi Visual guifg=Yellow guibg=LightBlue gui=none
+"hi Visual guifg=Yellow guibg=LightBlue gui=none
 
 if has("autocmd")
   filetype on
