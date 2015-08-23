@@ -151,6 +151,7 @@ set guitablabel=%M\ %t
 colorscheme lucius
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
+hi Visual ctermfg=Grey guifg=Grey
 
 if has("autocmd")
   filetype on
