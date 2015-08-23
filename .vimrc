@@ -78,7 +78,7 @@ set hlsearch
 let mapleader = ","
 let g:mapleader = ","
 
-
+map <C-n> :NERDTreeToggle<CR>
 nmap <leader>t <Esc>:tabnew<CR>
 nmap <leader>n <Esc>:tabnext<CR>
 nmap <leader>p <Esc>:tabprevious<CR>
@@ -107,10 +107,6 @@ nmap <leader>fj <Esc>:%!json_reformat<CR>
 
 " xml reformat (brew install xmllint)
 nmap <leader>fx <Esc>:%!xmllint --format -<CR>
-
-" ruby functionality
-nmap <F5> <Esc>:!ruby -c %<CR>
-nmap <F6> <Esc>:!ruby %<CR>
 
 " clojure functionality
 nmap clj <Esc>:!clj %<CR>

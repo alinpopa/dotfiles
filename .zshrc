@@ -114,7 +114,7 @@ alias vi='vi -c NERDTreeToggle'
 alias grep='grep --color=auto'
 alias mysql_start='sudo MySQLCOM start'
 alias mysql_stop='sudo MySQLCOM stop'
-alias mvim='mvim -c NERDTreeToggle'
+#alias mvim='mvim -c NERDTreeToggle'
 alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
 alias tinyscheme="rlwrap scheme"
 
