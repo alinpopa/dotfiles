@@ -111,6 +111,9 @@ nmap <leader>fx <Esc>:%!xmllint --format -<CR>
 " clojure functionality
 nmap clj <Esc>:!clj %<CR>
 
+" vmap
+vmap <leader>c "*y
+
 noremap  <Up> <Nop>
 noremap  <Down> <Nop>
 noremap  <Left> <Nop>
