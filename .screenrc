@@ -5,5 +5,5 @@
 # Very nice tabbed colored hardstatus line
 #hardstatus string "screen %=%H | %t"
 #hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
-escape ^tt
+#escape ^tt
 
