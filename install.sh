@@ -6,7 +6,6 @@ FILES=".gemrc \
   .vim \
   .vimrc \
   .zshrc \
-  .zprofile \
   .kerlrc \
   .screenrc \
   bin \
