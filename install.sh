@@ -10,7 +10,8 @@ FILES=".gemrc \
   .kerlrc \
   .screenrc \
   bin \
-  zsh_completions"
+  zsh_completions \
+  .tmux.conf"
 
 # Remove symlinks
 for file in $FILES
