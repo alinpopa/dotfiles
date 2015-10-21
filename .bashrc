@@ -141,3 +141,9 @@ function nvm () {
   fi
 }
 
+for src_file in $HOME/.config/*.src; do
+  if [ -f $src_file ]; then
+    source $src_file
+  fi
+done
+
