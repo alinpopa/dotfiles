@@ -169,3 +169,4 @@ endif
 let g:CommandTMaxFiles = 35000
 let g:ctrlp_max_files = 35000
 
+let g:airline_section_b = '%{getcwd()}'
