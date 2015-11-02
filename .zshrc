@@ -111,6 +111,7 @@ export PATH=~/apps/mzbench/bin:${PATH}
 
 alias ls='ls -Fl -G'
 alias vi='vi -c NERDTreeToggle'
+alias vim='mvim -v'
 alias grep='grep --color=auto'
 alias mysql_start='sudo MySQLCOM start'
 alias mysql_stop='sudo MySQLCOM stop'
