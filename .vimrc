@@ -9,7 +9,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'https://github.com/xolox/vim-misc.git'
+Plugin 'https://github.com/xolox/vim-notes.git'
 Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
@@ -31,6 +32,7 @@ Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plugin 'https://github.com/alinpopa/lucius.vim.git'
 Plugin 'bling/vim-airline'
+Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 
 call vundle#end()
 
@@ -170,3 +172,8 @@ let g:CommandTMaxFiles = 35000
 let g:ctrlp_max_files = 35000
 
 let g:airline_section_b = '%{getcwd()}'
+
+let g:notes_directories = ['~/work/notes']
+let g:notes_tab_indents = 0
+
+
