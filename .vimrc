@@ -170,10 +170,11 @@ endif
 
 let g:CommandTMaxFiles = 35000
 let g:ctrlp_max_files = 35000
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:airline_section_b = '%{getcwd()}'
 
 let g:notes_directories = ['~/work/notes']
 let g:notes_tab_indents = 0
-
+let g:notes_smart_quotes = 0
 
