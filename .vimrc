@@ -158,11 +158,12 @@ hi Visual ctermfg=Grey guifg=Grey
 if has("autocmd")
   filetype on
 
-  autocmd FileType erlang   setlocal sw=4 ts=4
-  autocmd FileType python   setlocal sw=4 ts=4
-  autocmd FileType ruby     setlocal sw=2 ts=2
-  autocmd FileType scala    setlocal sw=2 ts=2
-  autocmd FileType java     setlocal sw=4 ts=4
+  autocmd FileType erlang         setlocal sw=4 ts=4
+  autocmd FileType python         setlocal sw=4 ts=4
+  autocmd FileType ruby           setlocal sw=2 ts=2
+  autocmd FileType scala          setlocal sw=2 ts=2
+  autocmd FileType java           setlocal sw=4 ts=4
+  autocmd FileType javascript     setlocal sw=4 ts=4
 
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
