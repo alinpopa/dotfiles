@@ -1,7 +1,6 @@
-"call pathogen#infect()
-"call pathogen#helptags()
-
+set nocompatible
 filetype off
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -36,13 +35,10 @@ Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 
 call vundle#end()
 
-set nocompatible
-
 filetype indent on
 filetype plugin on
 set laststatus=2
-"set statusline=%<%f\%h%m%r%=%-20.(line=%l\ \ col=%c%V\ \ totlin=%L%)\ \ \%h%m%r%=%-40(bytval=0x%B,%n%Y%)\%P
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " syntax highligh on
 syntax on
