@@ -33,6 +33,7 @@ Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plugin 'https://github.com/alinpopa/lucius.vim.git'
 Plugin 'bling/vim-airline'
 Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 
@@ -179,3 +180,6 @@ let g:notes_directories = ['~/work/notes']
 let g:notes_tab_indents = 0
 let g:notes_smart_quotes = 0
 
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
