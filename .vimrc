@@ -30,6 +30,7 @@ Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plugin 'https://github.com/alinpopa/lucius.vim.git'
+"Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
 Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 Plugin 'mileszs/ack.vim'
@@ -161,6 +162,7 @@ if has("autocmd")
   autocmd FileType scala          setlocal sw=2 ts=2
   autocmd FileType java           setlocal sw=4 ts=4
   autocmd FileType javascript     setlocal sw=4 ts=4
+  autocmd FileType go             setlocal ts=4
 
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
