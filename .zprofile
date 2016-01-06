@@ -82,15 +82,6 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-alias ls='ls -Fl -G'
-alias vi='vi -c NERDTreeToggle'
-alias vim='mvim -v'
-alias grep='grep --color=auto'
-alias mysql_start='sudo MySQLCOM start'
-alias mysql_stop='sudo MySQLCOM stop'
-alias serve="ruby -r webrick -e\"s = WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
-alias tinyscheme="rlwrap scheme"
-
 function java8 () {
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 }
@@ -102,8 +93,6 @@ function urlencode () {
 function urldecode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
 }
-
-eval "$(direnv hook zsh)"
 
 for src_file in $HOME/.config/*.src.profile; do
   if [ -f $src_file ]; then
