@@ -5,6 +5,7 @@ DOTFILES=~/dotfiles
 FILES=".gemrc \
   .vim \
   .vimrc \
+  .zprofile \
   .zshrc \
   .kerlrc \
   .screenrc \
