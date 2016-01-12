@@ -94,7 +94,7 @@ function urldecode () {
   echo $1 | perl -MURI::Escape -ne 'chomp;print uri_unescape($_),"\n"'
 }
 
-for src_file in $HOME/.config/*.src.profile; do
+for src_file in $HOME/.config/*.src.profile(.N); do
   if [ -f $src_file ]; then
     source $src_file
   fi
