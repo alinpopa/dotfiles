@@ -30,6 +30,7 @@ Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plugin 'https://github.com/alinpopa/lucius.vim.git'
+"Plugin 'https://github.com/jonathanfilip/vim-lucius.git'
 "Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'bling/vim-airline'
 Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
@@ -148,6 +149,8 @@ set guioptions-=T
 set guioptions-=e
 set t_Co=256
 set guitablabel=%M\ %t
+"let g:lucius_style = 'dark'
+"let g:lucius_contrast_bg = 'normal'
 colorscheme lucius
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
@@ -181,3 +184,6 @@ let g:notes_smart_quotes = 0
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
+
