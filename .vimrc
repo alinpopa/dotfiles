@@ -36,8 +36,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 Plugin 'mileszs/ack.vim'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 
 call vundle#end()
 
