@@ -345,12 +345,12 @@ do_build()
         Darwin)
             if [ "$(gcc --version 2>/dev/null | grep -i -c llvm)" = "1" ]; then
                 if lion_support "$1"; then
-                    KERL_CONFIGURE_OPTIONS="CFLAGS=-O0 $KERL_CONFIGURE_OPTIONS"
+                    KERL_CONFIGURE_OPTIONS="$KERL_CONFIGURE_OPTIONS"
                 else
                     if [ -x "$(which gcc-4.2)" ]; then
                         KERL_CONFIGURE_OPTIONS="CC=gcc-4.2 $KERL_CONFIGURE_OPTIONS"
                     else
-                        KERL_CONFIGURE_OPTIONS="CC=llvm-gcc-4.2 CFLAGS=-O0 $KERL_CONFIGURE_OPTIONS"
+                        KERL_CONFIGURE_OPTIONS="CC=llvm-gcc-4.2 $KERL_CONFIGURE_OPTIONS"
                     fi
                 fi
             fi
