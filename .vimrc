@@ -36,6 +36,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 Plugin 'mileszs/ack.vim'
+Plugin 'scwood/vim-hybrid'
 
 call vundle#end()
 
@@ -153,6 +154,8 @@ set guitablabel=%M\ %t
 "let g:lucius_style = 'dark'
 "let g:lucius_contrast_bg = 'normal'
 colorscheme lucius
+"set background=dark
+"colorscheme hybrid
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 hi Visual ctermfg=Grey guifg=Grey
