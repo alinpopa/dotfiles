@@ -11,7 +11,9 @@ FILES=".gemrc \
   .screenrc \
   bin \
   zsh_completions \
-  .tmux.conf"
+  .tmux.conf \
+  .ocamlinit \
+  .utoprc"
 
 # Remove symlinks
 for file in $FILES
