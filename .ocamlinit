@@ -1,5 +1,6 @@
 (* Added by OPAM. *)
 #require "core";;
+#require "core.top";;
 (* #require "batteries";; *)
 
 let () =
