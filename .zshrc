@@ -6,7 +6,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 autoload -U colors compinit && colors
 compinit
 
-PROMPT="%{$fg[green]%}%c@%m %{$reset_color%}%% "
+PROMPT="%{$fg[green]%}%c %{$reset_color%}%% "
 
 # History stuff
 HISTSIZE=10000
