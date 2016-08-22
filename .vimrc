@@ -195,5 +195,5 @@ command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
-let g:erlang_tags_ignore = "'**/.eunit/'"
+let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
 
