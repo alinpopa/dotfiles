@@ -197,3 +197,5 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
 
+set completeopt-=preview
+
