@@ -15,6 +15,7 @@ Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
 Plugin 'https://github.com/fatih/vim-go.git'
+Plugin 'SirVer/ultisnips'
 Plugin 'https://github.com/tfnico/vim-gradle.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/elixir-lang/vim-elixir.git'
@@ -44,7 +45,6 @@ call vundle#end()
 filetype indent on
 filetype plugin on
 set laststatus=2
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " syntax highligh on
 syntax on
@@ -113,9 +113,6 @@ nmap <leader>fj <Esc>:%!json_reformat<CR>
 " xml reformat (brew install xmllint)
 nmap <leader>fx <Esc>:%!xmllint --format -<CR>
 
-" clojure functionality
-nmap clj <Esc>:!clj %<CR>
-
 " vmap
 vmap <leader>c "*y
 
@@ -124,30 +121,8 @@ noremap  <Down> <Nop>
 noremap  <Left> <Nop>
 noremap  <Right> <Nop>
 
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
-
-"let clj_want_gorilla = 1
-
-"let vimclojure#NailgunClient = "/Users/alin/apps/vimclojure-2.1.2/ng"
-
-
-" haskell stuff
-"let g:haskell_indent_if = 2
-
 set vb t_vb=
 
-"colorscheme wombat
-
-" show hiden characters (like line feed)
-"set list
-
-"if has("gui_running")
-"  set guioptions-=T
-"  set guioptions-=e
-"  set t_Co=256
-"  set guitablabel=%M\ %t
-"endif
 set guioptions-=T
 set guioptions-=e
 set t_Co=256
@@ -160,7 +135,9 @@ colorscheme lucius
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 hi Visual ctermfg=Grey guifg=Grey
+command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
 
+" File types settings
 if has("autocmd")
   filetype on
 
@@ -176,26 +153,38 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
 endif
 
-let g:CommandTMaxFiles = 35000
+" ctrlp
 let g:ctrlp_max_files = 35000
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+" Status bar
 let g:airline_section_b = '%{getcwd()}'
 
+" Notes
 let g:notes_directories = ['~/work/notes']
 let g:notes_tab_indents = 0
 let g:notes_smart_quotes = 0
 
+" the silver searcher settings
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
-
+" OCaml
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
+" Erlang
 let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
 
-set completeopt-=preview
+" Completion
+"set completeopt-=preview
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" Clojure
+nmap clj <Esc>:!clj %<CR>
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
 
