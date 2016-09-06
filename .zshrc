@@ -17,6 +17,7 @@ setopt INC_APPEND_HISTORY
 
 alias ls='ls -Fl -G'
 if [[ `uname` == 'Darwin' ]]; then
+  alias vi='vim'
   alias vim='mvim -v'
 fi
 alias grep='grep --color=auto'
