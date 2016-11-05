@@ -23,8 +23,6 @@ fi
 alias grep='grep --color=auto'
 alias tinyscheme="rlwrap scheme"
 
-eval "$(direnv hook zsh)"
-
 for src_file in ${HOME}/.config/*.src.rc(.N); do
   if [ -f $src_file ]; then
     source $src_file
