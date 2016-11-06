@@ -1,4 +1,4 @@
-ulimit -n 65000
+#ulimit -n 65000
 # Zsh custom folder completions
 fpath=(~/zsh_completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
@@ -6,7 +6,7 @@ fpath=(/usr/local/share/zsh/site-functions $fpath)
 autoload -U colors compinit && colors
 compinit
 
-PROMPT="%{$fg[green]%}%c %{$reset_color%}%% "
+PROMPT="%{$fg[green]%}%m:%c %{$reset_color%}%% "
 
 # History stuff
 HISTSIZE=10000
