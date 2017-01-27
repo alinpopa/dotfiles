@@ -39,6 +39,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/jakwings/vim-pony.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
+Plugin 'rgrinberg/vim-ocaml'
 
 call vundle#end()
 
