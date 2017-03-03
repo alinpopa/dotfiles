@@ -41,6 +41,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
 Plugin 'rgrinberg/vim-ocaml'
 Plugin 'rizzatti/dash.vim'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
