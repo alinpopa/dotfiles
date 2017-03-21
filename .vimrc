@@ -40,8 +40,8 @@ Plugin 'https://github.com/jakwings/vim-pony.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
 Plugin 'rgrinberg/vim-ocaml'
-Plugin 'rizzatti/dash.vim'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'rizzatti/dash.vim'
+"Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -169,8 +169,8 @@ let g:notes_tab_indents = 0
 let g:notes_smart_quotes = 0
 
 " the silver searcher settings
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 " OCaml
