@@ -40,6 +40,7 @@ Plugin 'https://github.com/jakwings/vim-pony.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
 Plugin 'rgrinberg/vim-ocaml'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
 
