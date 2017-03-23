@@ -118,7 +118,7 @@ nmap <leader>fj <Esc>:%!json_reformat<CR>
 nmap <leader>fx <Esc>:%!xmllint --format -<CR>
 
 " vmap
-vmap <leader>c "*y
+vmap <leader>C "*y
 
 noremap  <Up> <Nop>
 noremap  <Down> <Nop>
