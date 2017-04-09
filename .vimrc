@@ -39,7 +39,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/jakwings/vim-pony.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
-Plugin 'rgrinberg/vim-ocaml'
+"Plugin 'rgrinberg/vim-ocaml'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
@@ -177,6 +177,7 @@ endif
 " OCaml
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
 " Erlang
 let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
