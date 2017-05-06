@@ -155,6 +155,7 @@ if has("autocmd")
 
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
+  autocmd BufNewFile,BufRead *.alp set filetype=ocaml
 endif
 
 " ctrlp
