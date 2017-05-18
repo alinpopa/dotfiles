@@ -10,7 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/xolox/vim-misc.git'
 Plugin 'https://github.com/xolox/vim-notes.git'
-Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
+Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
+"Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
@@ -41,6 +42,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
 "Plugin 'rgrinberg/vim-ocaml'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'junegunn/fzf'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
 
@@ -159,7 +161,8 @@ if has("autocmd")
 endif
 
 " ctrlp
-let g:ctrlp_max_files = 35000
+let g:ctrlp_max_files = 0
+let g:ctrlp_max_depth = 100
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Status bar
