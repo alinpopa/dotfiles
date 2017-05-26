@@ -1,5 +1,22 @@
 set nocompatible
 filetype off
+" syntax highligh on
+syntax on
+
+" show line number
+set number
+
+" move backspace functionality one row upper
+set bs=2
+
+" tab indent to 4
+set ts=2
+set sw=2
+set expandtab
+
+filetype indent on
+filetype plugin on
+set laststatus=2
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -48,26 +65,8 @@ Plugin 'junegunn/fzf'
 
 call vundle#end()
 
-filetype indent on
-filetype plugin on
-set laststatus=2
-
-" syntax highligh on
-syntax on
-
-" show line number
-set number
-
-" move backspace functionality one row upper
-set bs=2
-
 " disable vi compatibility
 ":set nocp
-
-" tab indent to 4
-set ts=2
-set sw=2
-set expandtab
 
 " enable folding
 ":set foldmethod=syntax
