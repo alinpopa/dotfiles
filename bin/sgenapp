@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+ORG=$1
+NAME=$2
+MAIN_OBJ=$3
+
+usage () {
+  echo "sgenapp: Generate Scala app skeleton"
+  echo "usage: $0 <organisation> <app name> <main class name>"
+  exit 1
+}
+
+to_path () {
+  what=$1
+  echo "$what" | tr "." "/"
+}
+
+render_sbt () {
+  sbt_file=$(cat <<-EOM
+lazy val commonSettings = Seq(
+  organization := "$ORG",
+  version := "1.0.0",
+  scalaVersion := "2.12.2",
+  scalacOptions := Seq("-unchecked", "-deprecation", "-feature")
+)
+
+lazy val root = (project in file(".")).
+  settings(commonSettings: _*).
+  settings(
+    name := "$NAME",
+    mainClass in assembly := Some("${ORG}.${MAIN_OBJ}"),
+    assemblyJarName in assembly := s"\${name.value}-\${version.value}.jar"
+  )
+
+libraryDependencies ++= {
+  Seq(
+    "com.typesafe.akka" %% "akka-actor" % "2.5.2",
+    "org.scalatest" %% "scalatest" % "3.0.1" % Test,
+    "com.typesafe.akka" %% "akka-testkit" % "2.5.2" % Test
+  )
+}
+EOM
+)
+  echo "$sbt_file"
+}
+
+render_main () {
+  package="$ORG"
+  main_content=$(cat <<-EOM
+package $package
+
+object $MAIN_OBJ {
+  def main(args: Array[String]): Unit = {
+    println("Hello, $MAIN_OBJ!")
+  }
+}
+EOM
+)
+  echo "$main_content"
+}
+
+run () {
+  if [ -z "$ORG" ] || [ -z "$NAME" ] || [ -z "$MAIN_OBJ" ]; then
+    echo "Incomplete command line arguments"
+    usage
+  fi
+  path="$(to_path "$ORG")"
+  mkdir -p "project"
+  mkdir -p "src/main/scala/$path"
+  mkdir -p "src/test/scala/$path"
+  echo "$(render_sbt)" > build.sbt
+  echo "$(render_main)" > "src/main/scala/${path}/${MAIN_OBJ}.scala"
+  echo 'addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.4")' > "project/assembly.sbt"
+  echo 'sbt.version = 0.13.15' > "project/build.properties"
+}
+
+run
