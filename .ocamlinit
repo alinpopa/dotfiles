@@ -1,8 +1,17 @@
 (* Added by OPAM. *)
 #require "core";;
+#require "utop";;
 (* #require "batteries";; *)
 
+(*let () =*)
+(*  try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")*)
+(*  with Not_found -> ()*)
+(*;;*)
+
 let () =
+  let _ = UTop.prompt := fst (React.S.create LTerm_text.(
+    eval [B_fg (LTerm_style.green); S "> "]
+  )) in
   try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")
   with Not_found -> ()
 ;;
