@@ -200,3 +200,5 @@ let g:vimclojure#ParenRainbow = 1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
+" Set the colors for the Quickfix window
+hi QuickFixLine ctermbg=94 guibg=#875f00 ctermfg=144 guifg=#afaf87
