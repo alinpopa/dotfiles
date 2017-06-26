@@ -60,6 +60,9 @@ Plugin 'scwood/vim-hybrid'
 "Plugin 'rgrinberg/vim-ocaml'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/fzf'
+"Plugin 'ruanyl/vim-gh-line'
+" and a more recent fork of vim-gh-line ...
+Plugin 'jonathancua/vim-gh-line'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
 
