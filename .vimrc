@@ -59,7 +59,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
 "Plugin 'rgrinberg/vim-ocaml'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'junegunn/fzf'
+"Plugin 'junegunn/fzf'
 "Plugin 'ruanyl/vim-gh-line'
 " and a more recent fork of vim-gh-line ...
 Plugin 'jonathancua/vim-gh-line'
