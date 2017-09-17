@@ -71,7 +71,7 @@ run () {
   echo "$(render_sbt)" > build.sbt
   echo "$(render_main)" > "src/main/scala/${path}/${MAIN_OBJ}.scala"
   echo 'addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.5")' > "project/assembly.sbt"
-  echo 'sbt.version = 1.0.0' > "project/build.properties"
+  echo 'sbt.version = 0.13.6' > "project/build.properties"
 }
 
 run
