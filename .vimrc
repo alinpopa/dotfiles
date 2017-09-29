@@ -36,7 +36,8 @@ Plugin 'https://github.com/fatih/vim-go.git'
 "Plugin 'SirVer/ultisnips'
 Plugin 'https://github.com/tfnico/vim-gradle.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'https://github.com/elixir-lang/vim-elixir.git'
+"Plugin 'https://github.com/elixir-lang/vim-elixir.git'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'git://github.com/rust-lang/rust.vim.git'
 Plugin 'git://github.com/vim-perl/vim-perl.git'
 "Plugin 'git://github.com/alinpopa/vimerl.git'
@@ -160,6 +161,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
   autocmd BufNewFile,BufRead *.alp set filetype=ocaml
+  autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
 endif
 
 " ctrlp
