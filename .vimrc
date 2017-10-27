@@ -162,6 +162,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
   autocmd BufNewFile,BufRead *.alp set filetype=ocaml
   autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
+  autocmd BufNewFile,BufRead *.pony set filetype=pony
 endif
 
 " ctrlp
