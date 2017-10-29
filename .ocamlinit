@@ -16,6 +16,6 @@ let () =
   with Not_found -> ()
 ;;
 
-open Core;;
+(*open Core;;*)
 (*open Batteries;;*)
 
