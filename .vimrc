@@ -66,6 +66,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'jonathancua/vim-gh-line'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -163,6 +164,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.alp set filetype=ocaml
   autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
   autocmd BufNewFile,BufRead *.pony set filetype=pony
+  autocmd BufNewFile,BufRead *.ts set filetype=typescript
 endif
 
 " ctrlp
