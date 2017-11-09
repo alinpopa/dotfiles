@@ -29,6 +29,7 @@ Plugin 'https://github.com/xolox/vim-misc.git'
 Plugin 'https://github.com/xolox/vim-notes.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
 "Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
+Plugin 'ensime/ensime-vim'
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
@@ -165,6 +166,9 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
   autocmd BufNewFile,BufRead *.pony set filetype=pony
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+  autocmd BufWritePost *.scala silent :EnTypeCheck
 endif
 
 " ctrlp

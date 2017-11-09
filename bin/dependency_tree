@@ -1,6 +1,0 @@
-#!/usr/bin/env zsh
-
-#mvn dependency:tree -DoutputType=dot -Dverbose
-#mvn dependency:tree -Dverbose -Dincludes=io.netty
-mvn dependency:tree -Dverbose
-
