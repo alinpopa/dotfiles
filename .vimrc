@@ -68,6 +68,8 @@ Plugin 'jonathancua/vim-gh-line'
 "Plugin 'rizzatti/dash.vim'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'leafgarland/typescript-vim'
+"Plugin 'phpvim/phpcd.vim'
+Plugin 'joonty/vdebug'
 
 call vundle#end()
 
@@ -174,7 +176,15 @@ endif
 " ctrlp
 let g:ctrlp_max_files = 0
 let g:ctrlp_max_depth = 100
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_working_path_mode = 'w'
+
+" the silver searcher settings
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
 
 " Status bar
 let g:airline_section_b = '%{getcwd()}'
@@ -183,11 +193,6 @@ let g:airline_section_b = '%{getcwd()}'
 let g:notes_directories = ['~/work/notes']
 let g:notes_tab_indents = 0
 let g:notes_smart_quotes = 0
-
-" the silver searcher settings
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep'
-endif
 
 " OCaml
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
