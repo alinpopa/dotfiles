@@ -1,0 +1,158 @@
+#!/usr/bin/env bash
+
+NAME=$1
+
+usage () {
+  echo "ogenapp: Generate OCaml jbuilder app skeleton"
+  echo "usage: $0 <app name>"
+  exit 1
+}
+
+render_make () {
+  make_file=$(cat <<EOM
+.PHONY: clean build utop main
+
+all: build
+
+clean:
+	-rm -rf _build
+	-rm -rf src/.merlin
+	-rm -rf *.install
+
+build:
+	jbuilder build --only-packages=$NAME @install
+
+utop:
+	jbuilder exec utop
+
+main: build
+	jbuilder build bin/main.exe
+EOM
+)
+	echo "$make_file"
+}
+
+render_opam () {
+  opam_file=$(cat <<EOM
+opam-version: "1.2"
+name: "$NAME"
+version: "0.0.1"
+maintainer: "alin.popa@gmail.com"
+authors: ["Alin Popa"]
+homepage: "https://github.com/alinpopa/$NAME"
+bug-reports: "https://github.com/alinpopa/$NAME/issues"
+dev-repo: "https://github.com/alinpopa/$NAME.git"
+license: "LGPL-3 with OCaml linking exception"
+available: [
+  ocaml-version >= "4.04.0"
+]
+build: [
+  ["jbuilder" "build" "-p" "$NAME" "." "-j" jobs "@install"]
+]
+depends: [
+  "jbuilder" {build & >= "1.0+beta10"}
+  "lwt"
+  "core"
+]
+descr: "Generic project description here..."
+EOM
+)
+  echo "$opam_file"
+}
+
+render_src_jbuild () {
+  jbuild_file=$(cat <<EOM
+(library
+  ((name $NAME)
+   (public_name $NAME)
+   (flags (:standard -warn-error A))
+   (libraries ($NAME.lib lwt core))))
+EOM
+)
+  echo "$jbuild_file"
+}
+
+render_lib_jbuild () {
+  jbuild_file=$(cat <<EOM
+(library
+  ((name ${NAME}Lib)
+   (public_name ${NAME}.lib)
+   (flags (:standard -warn-error A))
+   (libraries (lwt))))
+EOM
+)
+  echo "$jbuild_file"
+}
+
+render_lib_mli () {
+  mli_file=$(cat <<EOM
+type t = int
+
+val test : t -> t
+EOM
+)
+  echo "$mli_file"
+}
+
+render_lib_ml () {
+  ml_file=$(cat <<EOM
+type t = int
+
+let test i =
+  i + 1
+EOM
+)
+  echo "$ml_file"
+}
+
+render_bin_jbuild () {
+  jbuild_file=$(cat <<EOM
+(executables
+ ((names (main))
+  (flags (:standard -warn-error A))
+  (libraries ($NAME lwt.unix))))
+EOM
+)
+  echo "$jbuild_file"
+}
+
+capitalise () {
+  foo=$1
+  echo "$(tr '[:lower:]' '[:upper:]' <<< ${foo:0:1})${foo:1}"
+}
+
+render_bin_main () {
+  capitalised_name=$(capitalise $NAME)
+  main_file=$(cat <<EOM
+open Lwt
+open ${capitalised_name}Lib.Lib
+
+let () =
+  Lwt_main.run (
+    Lwt_io.printlf "done: %i" (test 5)
+  )
+EOM
+)
+  echo "$main_file"
+}
+
+run () {
+  if [ -z "$NAME" ] ; then
+    echo "Incomplete command line arguments"
+    usage
+  fi
+  mkdir -p "${NAME}"
+  mkdir -p "${NAME}"/bin
+  mkdir -p "${NAME}"/src/lib
+  echo "$(render_make)" > "${NAME}/Makefile"
+  echo "$(render_opam)" > "${NAME}/${NAME}.opam"
+  echo "(jbuild_version 1)" > "${NAME}/jbuild"
+  echo "$(render_src_jbuild)" > "${NAME}/src/jbuild"
+  echo "$(render_lib_jbuild)" > "${NAME}/src/lib/jbuild"
+  echo "$(render_lib_mli)" > "${NAME}/src/lib/lib.mli"
+  echo "$(render_lib_ml)" > "${NAME}/src/lib/lib.ml"
+  echo "$(render_bin_jbuild)" > "${NAME}/bin/jbuild"
+  echo "$(render_bin_main)" > "${NAME}/bin/main.ml"
+}
+
+run
