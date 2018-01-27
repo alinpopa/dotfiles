@@ -10,7 +10,7 @@ usage () {
 
 render_make () {
   make_file=$(cat <<EOM
-.PHONY: clean build utop main
+.PHONY: clean build utop main test
 
 all: build
 
@@ -27,6 +27,9 @@ utop:
 
 main: build
 	jbuilder build bin/main.exe
+
+test: build
+	jbuilder runtest
 EOM
 )
 	echo "$make_file"
@@ -53,6 +56,8 @@ depends: [
   "jbuilder" {build & >= "1.0+beta10"}
   "lwt"
   "core"
+
+  "ounit" {test}
 ]
 descr: "Generic project description here..."
 EOM
@@ -88,7 +93,7 @@ render_lib_mli () {
   mli_file=$(cat <<EOM
 type t = int
 
-val test : t -> t
+val inc : t -> t
 EOM
 )
   echo "$mli_file"
@@ -98,7 +103,7 @@ render_lib_ml () {
   ml_file=$(cat <<EOM
 type t = int
 
-let test i =
+let inc i =
   i + 1
 EOM
 )
@@ -129,11 +134,48 @@ open ${capitalised_name}Lib.Lib
 
 let () =
   Lwt_main.run (
-    Lwt_io.printlf "done: %i" (test 5)
+    Lwt_io.printlf "inc 5 to %i" (inc 5)
   )
 EOM
 )
   echo "$main_file"
+}
+
+render_test_jbuild () {
+  jbuild_file=$(cat <<EOM
+(executable (
+  (name lib_test)
+  (libraries ($NAME.lib ounit))
+))
+
+(alias (
+  (name runtest)
+  (deps (lib_test.exe))
+  (action (run \${<}))
+))
+EOM
+)
+  echo "$jbuild_file"
+}
+
+render_lib_test () {
+  capitalised_name=$(capitalise $NAME)
+  lib_test_file=$(cat <<EOM
+open OUnit
+open ${capitalised_name}Lib.Lib
+
+let suite =
+  "Lib test suite" >::: [
+    "inc" >:: (fun _ ->
+      assert_equal (inc 5) 6
+    );
+  ]
+
+let _ =
+  run_test_tt_main suite
+EOM
+)
+  echo "$lib_test_file"
 }
 
 run () {
@@ -144,6 +186,7 @@ run () {
   mkdir -p "${NAME}"
   mkdir -p "${NAME}"/bin
   mkdir -p "${NAME}"/src/lib
+  mkdir -p "${NAME}"/test
   echo "$(render_make)" > "${NAME}/Makefile"
   echo "$(render_opam)" > "${NAME}/${NAME}.opam"
   echo "(jbuild_version 1)" > "${NAME}/jbuild"
@@ -153,6 +196,8 @@ run () {
   echo "$(render_lib_ml)" > "${NAME}/src/lib/lib.ml"
   echo "$(render_bin_jbuild)" > "${NAME}/bin/jbuild"
   echo "$(render_bin_main)" > "${NAME}/bin/main.ml"
+  echo "$(render_test_jbuild)" > "${NAME}/test/jbuild"
+  echo "$(render_lib_test)" > "${NAME}/test/lib_test.ml"
 }
 
 run
