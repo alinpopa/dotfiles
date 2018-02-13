@@ -18,6 +18,9 @@ filetype indent on
 filetype plugin on
 set laststatus=2
 
+" in omnicomplete you can see the scratch window; disable it
+set completeopt-=preview
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -70,6 +73,7 @@ Plugin 'jonathancua/vim-gh-line'
 Plugin 'leafgarland/typescript-vim'
 "Plugin 'phpvim/phpcd.vim'
 Plugin 'joonty/vdebug'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -161,6 +165,7 @@ if has("autocmd")
   autocmd FileType java           setlocal sw=4 ts=4
   autocmd FileType javascript     setlocal sw=4 ts=4
   autocmd FileType go             setlocal sw=4 ts=4
+  autocmd FileType php            setlocal sw=4 ts=4
 
   autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
   autocmd BufNewFile,BufRead *.nut set filetype=squirrel
@@ -196,6 +201,7 @@ let g:notes_tab_indents = 0
 let g:notes_smart_quotes = 0
 
 " OCaml
+let g:syntastic_ocaml_checkers = ['merlin']
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
