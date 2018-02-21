@@ -192,7 +192,7 @@ if executable('rg')
 endif
 
 " Status bar
-let g:airline_section_b = '%{getcwd()}'
+"let g:airline_section_b = '%{getcwd()}'
 "let g:airline#extensions#cursormode#enabled = 0
 
 " Notes
