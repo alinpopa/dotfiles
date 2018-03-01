@@ -65,7 +65,6 @@ export MANPATH=/opt/local/share/man:"${MANPATH}"
 export MANPATH=/usr/local/share/man:"${MANPATH}"
 export MANPATH="${JUSTNIFFER_HOME}/share/man":${MANPATH}
 
-export PATH=${HOME_BIN}:${PATH}
 export PATH="${PATH}":"${JRUBY_HOME}"/bin
 export PATH="${ANT_HOME}"/bin:"${PATH}"
 export PATH=~/apps/maven/bin:"${PATH}"
@@ -81,6 +80,7 @@ export PATH=/usr/local/bin:"${PATH}"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 #export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=${HOME_BIN}:${PATH}
 
 function java8 () {
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)

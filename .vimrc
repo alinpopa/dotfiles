@@ -31,47 +31,29 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/xolox/vim-misc.git'
 Plugin 'https://github.com/xolox/vim-notes.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
-"Plugin 'git://github.com/kien/ctrlp.vim.git', {'name': 'ctrlp'}
 Plugin 'ensime/ensime-vim'
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
 Plugin 'https://github.com/fatih/vim-go.git'
-"Plugin 'SirVer/ultisnips'
 Plugin 'https://github.com/tfnico/vim-gradle.git'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
-"Plugin 'https://github.com/elixir-lang/vim-elixir.git'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'git://github.com/rust-lang/rust.vim.git'
 Plugin 'git://github.com/vim-perl/vim-perl.git'
-"Plugin 'git://github.com/alinpopa/vimerl.git'
-"Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
-"Plugin 'https://github.com/KoFish/vim-erlang-compiler.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-runtime.git'
-"Plugin 'git@github.com:alinpopa/vim-erlang-runtime.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
-"Plugin 'https://github.com/alinpopa/vim-erlang-compiler.git'
-Plugin 'git://github.com/alinpopa/vim-squirrel.git'
 Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plugin 'https://github.com/alinpopa/lucius.vim.git'
-"Plugin 'https://github.com/jonathanfilip/vim-lucius.git'
-"Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'https://github.com/dleonard0/pony-vim-syntax.git'
 Plugin 'https://github.com/jakwings/vim-pony.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scwood/vim-hybrid'
-"Plugin 'rgrinberg/vim-ocaml'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'junegunn/fzf'
-"Plugin 'ruanyl/vim-gh-line'
 " and a more recent fork of vim-gh-line ...
 Plugin 'jonathancua/vim-gh-line'
-"Plugin 'rizzatti/dash.vim'
-"Plugin 'airblade/vim-gitgutter'
 Plugin 'leafgarland/typescript-vim'
-"Plugin 'phpvim/phpcd.vim'
 Plugin 'joonty/vdebug'
 Plugin 'scrooloose/syntastic'
 
@@ -202,6 +184,7 @@ let g:notes_smart_quotes = 0
 
 " OCaml
 let g:syntastic_ocaml_checkers = ['merlin']
+let g:syntastic_erlc_include_path = ['include', 'ebin']
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
