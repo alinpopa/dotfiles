@@ -31,7 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/xolox/vim-misc.git'
 Plugin 'https://github.com/xolox/vim-notes.git'
 Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
-Plugin 'ensime/ensime-vim'
+"lugin 'ensime/ensime-vim'
 Plugin 'git://github.com/derekwyatt/vim-scala.git'
 Plugin 'git://github.com/vim-scripts/VimClojure.git'
 Plugin 'git://github.com/tpope/vim-surround.git'
