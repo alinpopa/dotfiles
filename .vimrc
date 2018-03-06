@@ -54,7 +54,7 @@ Plugin 'scrooloose/nerdcommenter'
 " and a more recent fork of vim-gh-line ...
 Plugin 'jonathancua/vim-gh-line'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'joonty/vdebug'
+"Plugin 'joonty/vdebug'
 Plugin 'scrooloose/syntastic'
 
 call vundle#end()
