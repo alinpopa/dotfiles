@@ -21,44 +21,40 @@ set laststatus=2
 " in omnicomplete you can see the scratch window; disable it
 set completeopt-=preview
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'https://github.com/xolox/vim-misc.git'
-Plugin 'https://github.com/xolox/vim-notes.git'
-Plugin 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
-"lugin 'ensime/ensime-vim'
-Plugin 'git://github.com/derekwyatt/vim-scala.git'
-Plugin 'git://github.com/vim-scripts/VimClojure.git'
-Plugin 'git://github.com/tpope/vim-surround.git'
-Plugin 'https://github.com/fatih/vim-go.git'
-Plugin 'https://github.com/tfnico/vim-gradle.git'
-Plugin 'https://github.com/scrooloose/nerdtree.git'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'git://github.com/rust-lang/rust.vim.git'
-Plugin 'git://github.com/vim-perl/vim-perl.git'
-Plugin 'https://github.com/vim-erlang/vim-erlang-runtime.git'
-Plugin 'https://github.com/vim-erlang/vim-erlang-compiler.git'
-Plugin 'https://github.com/vim-erlang/vim-erlang-tags.git'
-Plugin 'https://github.com/alinpopa/lucius.vim.git'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'https://github.com/jakwings/vim-pony.git'
-Plugin 'mileszs/ack.vim'
-Plugin 'scwood/vim-hybrid'
-Plugin 'scrooloose/nerdcommenter'
-" and a more recent fork of vim-gh-line ...
-Plugin 'jonathancua/vim-gh-line'
-Plugin 'leafgarland/typescript-vim'
-"Plugin 'joonty/vdebug'
-Plugin 'scrooloose/syntastic'
+Plug 'https://github.com/xolox/vim-misc.git'
+Plug 'https://github.com/xolox/vim-notes.git'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
+Plug 'git://github.com/derekwyatt/vim-scala.git'
+Plug 'git://github.com/vim-scripts/VimClojure.git'
+Plug 'git://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/fatih/vim-go.git'
+Plug 'https://github.com/tfnico/vim-gradle.git'
+Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'elixir-editors/vim-elixir'
+Plug 'git://github.com/rust-lang/rust.vim.git'
+Plug 'git://github.com/vim-perl/vim-perl.git'
+Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
+Plug 'https://github.com/vim-erlang/vim-erlang-compiler.git'
+Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
+Plug 'https://github.com/alinpopa/lucius.vim.git'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/jakwings/vim-pony.git'
+Plug 'mileszs/ack.vim'
+Plug 'scwood/vim-hybrid'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jonathancua/vim-gh-line'
+Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/syntastic'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
-call vundle#end()
-
+call plug#end()
 " disable vi compatibility
 ":set nocp
 
@@ -156,6 +152,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.pony set filetype=pony
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
   autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.re,*.rei set filetype=reason
 
   autocmd BufWritePost *.scala silent :EnTypeCheck
 endif
@@ -209,3 +206,10 @@ let g:NERDTreeDirArrowCollapsible = '-'
 
 " Set the colors for the Quickfix window
 hi QuickFixLine ctermbg=94 guibg=#875f00 ctermfg=144 guifg=#afaf87
+
+" Reason/OCaml
+let g:LanguageClient_serverCommands = {
+  \ 'reason': ['ocaml-language-server', '--stdio'],
+  \ 'ocaml': ['ocaml-language-server', '--stdio'],
+  \ }
+
