@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"path/filepath"
 	"time"
 )
 
@@ -22,8 +23,10 @@ func loggingHandler(next http.Handler) http.Handler {
 
 func main() {
 	port := flag.Int("p", 8888, "port to serve on")
+	folder := flag.String("f", ".", "the folder of static files")
 	flag.Parse()
-	log.Printf("Serving on HTTP port %d\n", *port)
-	http.Handle("/", loggingHandler(http.FileServer(http.Dir("."))))
+	absFolder, _ := filepath.Abs(*folder)
+	log.Printf("Serving %s on HTTP port %d\n", absFolder, *port)
+	http.Handle("/", loggingHandler(http.FileServer(http.Dir(*folder))))
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), nil))
 }
