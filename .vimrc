@@ -46,7 +46,7 @@ Plug 'mileszs/ack.vim'
 Plug 'scwood/vim-hybrid'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jonathancua/vim-gh-line'
-Plug 'leafgarland/typescript-vim'
+"Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
