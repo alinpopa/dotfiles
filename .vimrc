@@ -115,6 +115,11 @@ noremap  <Up> <Nop>
 noremap  <Down> <Nop>
 noremap  <Left> <Nop>
 noremap  <Right> <Nop>
+nnoremap § <Esc>
+vnoremap § <Esc>gV
+onoremap § <Esc>
+cnoremap § <C-C><Esc>
+inoremap § <Esc>`^
 
 set vb t_vb=
 
