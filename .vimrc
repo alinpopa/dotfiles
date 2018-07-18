@@ -39,6 +39,8 @@ Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plug 'https://github.com/alinpopa/lucius.vim.git'
+Plug 'fenetikm/falcon'
+Plug 'nightsense/stellarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
@@ -130,6 +132,7 @@ set guitablabel=%M\ %t
 "let g:lucius_style = 'dark'
 "let g:lucius_contrast_bg = 'normal'
 colorscheme lucius
+"colorscheme falcon
 "set background=dark
 "colorscheme hybrid
 
