@@ -190,9 +190,9 @@ let g:notes_smart_quotes = 0
 " OCaml
 let g:syntastic_ocaml_checkers = ['merlin']
 let g:syntastic_erlc_include_path = ['include', 'ebin']
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
+"let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+"execute "set rtp+=" . g:opamshare . "/merlin/vim"
+"execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
 " Erlang
 let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
