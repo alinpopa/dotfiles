@@ -39,10 +39,11 @@ Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plug 'https://github.com/alinpopa/lucius.vim.git'
-Plug 'fenetikm/falcon'
-Plug 'nightsense/stellarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'fenetikm/falcon'
+Plug 'alinpopa/falcon'
+Plug 'itchyny/lightline.vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
 Plug 'mileszs/ack.vim'
 Plug 'scwood/vim-hybrid'
@@ -125,19 +126,25 @@ inoremap § <Esc>`^
 
 set vb t_vb=
 
+set termguicolors
 set guioptions-=T
 set guioptions-=e
 set t_Co=256
 set guitablabel=%M\ %t
 "let g:lucius_style = 'dark'
 "let g:lucius_contrast_bg = 'normal'
-colorscheme lucius
-"colorscheme falcon
-"set background=dark
-"colorscheme hybrid
+set background=dark
+"colorscheme lucius
+let g:falcon_lightline = 1
+let g:lightline = {
+  \ 'colorscheme': 'falcon',
+  \ }
+"let g:falcon_airline = 1
+"let g:airline_theme = 'falcon'
+colorscheme falcon
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
-hi Visual ctermfg=Grey guifg=Grey
+"hi Visual ctermfg=Grey guifg=Grey
 command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
 
 " File types settings
@@ -214,7 +221,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 " Set the colors for the Quickfix window
-hi QuickFixLine ctermbg=94 guibg=#875f00 ctermfg=144 guifg=#afaf87
+"hi QuickFixLine ctermbg=94 guibg=#875f00 ctermfg=144 guifg=#afaf87
 
 " Reason/OCaml
 let g:LanguageClient_serverCommands = {
