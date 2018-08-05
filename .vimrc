@@ -42,6 +42,7 @@ Plug 'https://github.com/alinpopa/lucius.vim.git'
 "Plug 'fenetikm/falcon'
 Plug 'alinpopa/falcon'
 Plug 'itchyny/lightline.vim'
+Plug 'treycucco/vim-monotonic'
 "Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
@@ -126,7 +127,7 @@ inoremap § <Esc>`^
 
 set vb t_vb=
 
-set termguicolors
+"set termguicolors
 set guioptions-=T
 set guioptions-=e
 set t_Co=256
@@ -135,13 +136,14 @@ set guitablabel=%M\ %t
 "let g:lucius_contrast_bg = 'normal'
 set background=dark
 "colorscheme lucius
-let g:falcon_lightline = 1
-let g:lightline = {
-  \ 'colorscheme': 'falcon',
-  \ }
+"let g:falcon_lightline = 1
+"let g:lightline = {
+"  \ 'colorscheme': 'falcon',
+"  \ }
 "let g:falcon_airline = 1
 "let g:airline_theme = 'falcon'
 colorscheme falcon
+"colorscheme monotonic
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 "hi Visual ctermfg=Grey guifg=Grey
