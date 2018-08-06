@@ -52,8 +52,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'jonathancua/vim-gh-line'
 
 " TypeScript
-Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'Quramy/tsuquyomi'
 
 Plug 'scrooloose/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
