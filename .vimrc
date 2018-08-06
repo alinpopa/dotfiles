@@ -50,7 +50,11 @@ Plug 'mileszs/ack.vim'
 Plug 'scwood/vim-hybrid'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jonathancua/vim-gh-line'
-"Plug 'leafgarland/typescript-vim'
+
+" TypeScript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+
 Plug 'scrooloose/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -158,7 +162,7 @@ if has("autocmd")
   autocmd FileType ruby           setlocal sw=2 ts=2
   autocmd FileType scala          setlocal sw=2 ts=2
   autocmd FileType java           setlocal sw=4 ts=4
-  autocmd FileType javascript     setlocal sw=4 ts=4
+  "autocmd FileType javascript     setlocal sw=2 ts=2
   autocmd FileType go             setlocal sw=4 ts=4
   autocmd FileType php            setlocal sw=4 ts=4
 
