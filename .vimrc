@@ -194,6 +194,11 @@ endif
 " Status bar
 "let g:airline_section_b = '%{getcwd()}'
 "let g:airline#extensions#cursormode#enabled = 0
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ }
+      \ }
 
 " Notes
 let g:notes_directories = ['~/work/notes']
