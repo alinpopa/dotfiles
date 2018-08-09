@@ -196,7 +196,7 @@ endif
 "let g:airline#extensions#cursormode#enabled = 0
 let g:lightline = {
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
       \ }
       \ }
 
