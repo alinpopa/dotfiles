@@ -193,6 +193,7 @@ endif
 
 " Status bar
 "let g:airline_section_b = '%{getcwd()}'
+let g:airline#extensions#syntastic#enabled = 0
 let g:airline#extensions#cursormode#enabled = 0
 "let g:lightline = {
 "      \ 'active': {
