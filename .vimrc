@@ -41,9 +41,9 @@ Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plug 'https://github.com/alinpopa/lucius.vim.git'
 "Plug 'fenetikm/falcon'
 Plug 'alinpopa/falcon'
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
 Plug 'treycucco/vim-monotonic'
-"Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 "Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
 Plug 'mileszs/ack.vim'
@@ -193,12 +193,12 @@ endif
 
 " Status bar
 "let g:airline_section_b = '%{getcwd()}'
-"let g:airline#extensions#cursormode#enabled = 0
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
-      \ }
-      \ }
+let g:airline#extensions#cursormode#enabled = 0
+"let g:lightline = {
+"      \ 'active': {
+"      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ],
+"      \ }
+"      \ }
 
 " Notes
 let g:notes_directories = ['~/work/notes']
