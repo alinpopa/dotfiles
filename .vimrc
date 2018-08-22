@@ -39,12 +39,12 @@ Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plug 'https://github.com/alinpopa/lucius.vim.git'
-"Plug 'fenetikm/falcon'
 Plug 'alinpopa/falcon'
+Plug 'alinpopa/justfalcon'
 "Plug 'itchyny/lightline.vim'
 Plug 'treycucco/vim-monotonic'
 Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
 Plug 'mileszs/ack.vim'
 Plug 'scwood/vim-hybrid'
@@ -55,7 +55,7 @@ Plug 'jonathancua/vim-gh-line'
 "Plug 'leafgarland/typescript-vim'
 "Plug 'Quramy/tsuquyomi'
 
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -144,9 +144,8 @@ set background=dark
 "let g:lightline = {
 "  \ 'colorscheme': 'falcon',
 "  \ }
-"let g:falcon_airline = 1
-"let g:airline_theme = 'falcon'
-colorscheme falcon
+let g:airline_theme='lucius'
+colorscheme justfalcon
 "colorscheme monotonic
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
@@ -193,7 +192,7 @@ endif
 
 " Status bar
 "let g:airline_section_b = '%{getcwd()}'
-let g:airline#extensions#syntastic#enabled = 0
+"let g:airline#extensions#syntastic#enabled = 0
 let g:airline#extensions#cursormode#enabled = 0
 "let g:lightline = {
 "      \ 'active': {
@@ -208,8 +207,8 @@ let g:notes_smart_quotes = 0
 
 " OCaml
 " (for NeoVIM, make sure you have Python support, do a :checkhealth )
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:syntastic_erlc_include_path = ['include', 'ebin']
+"let g:syntastic_ocaml_checkers = ['merlin']
+"let g:syntastic_erlc_include_path = ['include', 'ebin']
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
