@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+" filetype on
 " syntax highligh on
 syntax on
 
@@ -153,29 +153,29 @@ colorscheme justfalcon
 command Bgblack execute "highlight Normal ctermfg=grey ctermbg=black"
 
 " File types settings
-if has("autocmd")
-  filetype on
+"if has("autocmd")
+"  filetype on
 
-  autocmd FileType erlang         setlocal sw=4 ts=4
-  autocmd FileType python         setlocal sw=4 ts=4
-  autocmd FileType ruby           setlocal sw=2 ts=2
-  autocmd FileType scala          setlocal sw=2 ts=2
-  autocmd FileType java           setlocal sw=4 ts=4
-  "autocmd FileType javascript     setlocal sw=2 ts=2
-  autocmd FileType go             setlocal sw=4 ts=4
-  autocmd FileType php            setlocal sw=4 ts=4
+"  autocmd FileType erlang         setlocal sw=4 ts=4
+"  autocmd FileType python         setlocal sw=4 ts=4
+"  autocmd FileType ruby           setlocal sw=2 ts=2
+"  autocmd FileType scala          setlocal sw=2 ts=2
+"  autocmd FileType java           setlocal sw=4 ts=4
+"  "autocmd FileType javascript     setlocal sw=2 ts=2
+"  autocmd FileType go             setlocal sw=4 ts=4
+"  autocmd FileType php            setlocal sw=4 ts=4
 
-  autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
-  autocmd BufNewFile,BufRead *.nut set filetype=squirrel
-  autocmd BufNewFile,BufRead *.alp set filetype=ocaml
-  autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
-  autocmd BufNewFile,BufRead *.pony set filetype=pony
-  autocmd BufNewFile,BufRead *.ts set filetype=typescript
-  autocmd BufNewFile,BufRead *.md set filetype=markdown
-  autocmd BufNewFile,BufRead *.re,*.rei set filetype=reason
+"  autocmd BufNewFile,BufRead *.p6,*.pl6,*.perl6 set filetype=perl6
+"  autocmd BufNewFile,BufRead *.nut set filetype=squirrel
+"  autocmd BufNewFile,BufRead *.alp set filetype=ocaml
+"  autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir
+"  autocmd BufNewFile,BufRead *.pony set filetype=pony
+"  autocmd BufNewFile,BufRead *.ts set filetype=typescript
+"  autocmd BufNewFile,BufRead *.md set filetype=markdown
+"  autocmd BufNewFile,BufRead *.re,*.rei set filetype=reason
 
-  autocmd BufWritePost *.scala silent :EnTypeCheck
-endif
+"  autocmd BufWritePost *.scala silent :EnTypeCheck
+"endif
 
 " ctrlp
 let g:ctrlp_max_files = 0
