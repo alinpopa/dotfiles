@@ -23,14 +23,10 @@ set completeopt-=preview
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/xolox/vim-misc.git'
-Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
 Plug 'git://github.com/derekwyatt/vim-scala.git'
 Plug 'git://github.com/vim-scripts/VimClojure.git'
-Plug 'git://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/fatih/vim-go.git'
-Plug 'https://github.com/tfnico/vim-gradle.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'elixir-editors/vim-elixir'
 Plug 'git://github.com/rust-lang/rust.vim.git'
@@ -41,21 +37,14 @@ Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
 Plug 'https://github.com/alinpopa/lucius.vim.git'
 Plug 'alinpopa/falcon'
 Plug 'alinpopa/justfalcon'
-"Plug 'itchyny/lightline.vim'
 Plug 'treycucco/vim-monotonic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/jakwings/vim-pony.git'
 Plug 'mileszs/ack.vim'
-Plug 'scwood/vim-hybrid'
 Plug 'scrooloose/nerdcommenter'
-Plug 'jonathancua/vim-gh-line'
+Plug 'ruanyl/vim-gh-line'
 
-" TypeScript
-"Plug 'leafgarland/typescript-vim'
-"Plug 'Quramy/tsuquyomi'
-
-"Plug 'scrooloose/syntastic'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
