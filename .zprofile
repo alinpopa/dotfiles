@@ -100,3 +100,5 @@ for src_file in $HOME/.config/*.src.profile(.N); do
   fi
 done
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
