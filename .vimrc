@@ -29,6 +29,7 @@ Plug 'git://github.com/vim-scripts/VimClojure.git'
 Plug 'https://github.com/fatih/vim-go.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 Plug 'git://github.com/rust-lang/rust.vim.git'
 Plug 'git://github.com/vim-perl/vim-perl.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
@@ -204,6 +205,11 @@ execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
 " Erlang
 let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
+
+" Elixir
+
+let g:alchemist_tag_map = '<C-]>'
+let g:alchemist_tag_stack_map = '<C-T>'
 
 " Completion
 "set completeopt-=preview
