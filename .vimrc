@@ -135,10 +135,10 @@ set background=dark
 "let g:lightline = {
 "  \ 'colorscheme': 'falcon',
 "  \ }
-"let g:airline_theme='lucius'
-"colorscheme justfalcon
+let g:airline_theme='lucius'
+colorscheme justfalcon
 "colorscheme monotonic
-colorscheme gruvbox
+"colorscheme gruvbox
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 "hi Visual ctermfg=Grey guifg=Grey
