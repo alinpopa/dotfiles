@@ -45,6 +45,7 @@ Plug 'https://github.com/jakwings/vim-pony.git'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ruanyl/vim-gh-line'
+Plug 'morhetz/gruvbox'
 
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -134,9 +135,10 @@ set background=dark
 "let g:lightline = {
 "  \ 'colorscheme': 'falcon',
 "  \ }
-let g:airline_theme='lucius'
-colorscheme justfalcon
+"let g:airline_theme='lucius'
+"colorscheme justfalcon
 "colorscheme monotonic
+colorscheme gruvbox
 
 "hi Visual guifg=Yellow guibg=LightBlue gui=none
 "hi Visual ctermfg=Grey guifg=Grey
