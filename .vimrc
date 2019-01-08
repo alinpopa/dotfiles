@@ -237,3 +237,6 @@ let g:LanguageClient_serverCommands = {
   \ 'ocaml': ['ocaml-language-server', '--stdio'],
   \ }
 
+" Cursor
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
