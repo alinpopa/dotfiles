@@ -212,6 +212,8 @@ let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
 
 let g:alchemist_tag_map = '<C-]>'
 let g:alchemist_tag_stack_map = '<C-T>'
+autocmd BufWritePost *.exs silent :!mix format %
+autocmd BufWritePost *.ex silent :!mix format %
 
 " Completion
 "set completeopt-=preview
