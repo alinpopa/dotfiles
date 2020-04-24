@@ -46,12 +46,15 @@ Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ruanyl/vim-gh-line'
 Plug 'morhetz/gruvbox'
+Plug 'Vimjas/vim-python-pep8-indent'
 
-Plug 'reasonml-editor/vim-reason-plus'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'reasonml-editor/vim-reason-plus'
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
+Plug 'wolfgangmehner/lua-support'
+"Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 " disable vi compatibility
@@ -212,8 +215,8 @@ let g:erlang_tags_ignore = ["'**/.eunit/'", "'**/_rel/'"]
 
 let g:alchemist_tag_map = '<C-]>'
 let g:alchemist_tag_stack_map = '<C-T>'
-autocmd BufWritePost *.exs silent :!mix format %
-autocmd BufWritePost *.ex silent :!mix format %
+"autocmd BufWritePost *.exs silent :!mix format %
+"autocmd BufWritePost *.ex silent :!mix format %
 
 " Completion
 "set completeopt-=preview
@@ -246,3 +249,13 @@ let &t_EI = "\e[2 q"
 
 " GH
 let g:gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
+
+" Youcompleteme
+let g:ycm_auto_trigger = 0
+"  to disable ycm at startup
+"let g:loaded_youcompleteme = 1
+
+let g:go_search_bin_path_first = 0
+let g:go_metalinter_enabled = 0
+let g:go_highlight_diagnostic_errors = 0
+let g:go_highlight_diagnostic_warnings = 0
