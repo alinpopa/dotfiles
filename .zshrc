@@ -12,6 +12,7 @@ PROMPT="%{$fg[green]%}%m:%c %{$reset_color%}%% "
 HISTSIZE=10000
 HISTFILE=~/.history
 SAVEHIST=500
+PROMPT_EOL_MARK=''
 #setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
 

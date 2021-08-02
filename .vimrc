@@ -181,7 +181,7 @@ let g:ctrlp_working_path_mode = 'w'
 " the silver searcher settings
 if executable('rg')
   let g:ackprg = 'rg --vimgrep'
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never -g "!.git/" --glob ""'
   let g:ctrlp_use_caching = 0
 endif
 
@@ -204,7 +204,7 @@ let g:notes_smart_quotes = 0
 " (for NeoVIM, make sure you have Python support, do a :checkhealth )
 "let g:syntastic_ocaml_checkers = ['merlin']
 "let g:syntastic_erlc_include_path = ['include', 'ebin']
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+let g:opamshare = substitute(system('opam var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 execute "set rtp+=" . g:opamshare . "/ocp-indent/vim"
 
