@@ -23,15 +23,15 @@ set completeopt-=preview
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/ctrlpvim/ctrlp.vim.git', {'name': 'ctrlp'}
-Plug 'git://github.com/derekwyatt/vim-scala.git'
-Plug 'git://github.com/vim-scripts/VimClojure.git'
+Plug 'ctrlpvim/ctrlp.vim', {'name': 'ctrlp'}
+Plug 'derekwyatt/vim-scala'
+Plug 'clojure-vim/clojure.vim'
 Plug 'https://github.com/fatih/vim-go.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
-Plug 'git://github.com/rust-lang/rust.vim.git'
-Plug 'git://github.com/vim-perl/vim-perl.git'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-perl/vim-perl'
 Plug 'https://github.com/vim-erlang/vim-erlang-runtime.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-compiler.git'
 Plug 'https://github.com/vim-erlang/vim-erlang-tags.git'
