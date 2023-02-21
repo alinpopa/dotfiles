@@ -85,8 +85,7 @@ require("nvim-tree").setup({
 
 --require("dracula").setup()
 --vim.cmd[[colorscheme dracula]]
---vim.cmd[[colorscheme justfalcon]]
---vim.cmd[[colorscheme justfalcon]]
+vim.cmd[[colorscheme justfalcon]]
 --vim.cmd[[highlight Normal ctermfg=grey ctermbg=black]]
 --vim.cmd[[colorscheme gruvbox]]
 
